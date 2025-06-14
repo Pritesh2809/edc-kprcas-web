@@ -1,0 +1,71 @@
+/* Focus styles for accessibility */
+a:focus, button:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+}
+
+
+.nav-links a:hover {
+    color: #667eea;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: linear-gradient(135deg, #b6e9ff 0%, #4d8852 100%);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Smooth transitions */
+.mobile-menu-transition {
+    transition: all 0.3s ease-in-out;
+    transform-origin: top;
+}
+
+.mobile-menu-enter {
+    opacity: 0;
+    transform: scaleY(0);
+}
+
+.mobile-menu-enter-active {
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+/* Backdrop blur fallback */
+.backdrop-blur-fallback {
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+/* Better touch targets for mobile */
+@media (max-width: 768px) {
+    .mobile-nav-link {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        padding: 12px 0;
+        border-bottom: 1px solid #f3f4f6;
+    }
+
+    .mobile-nav-link:last-child {
+        border-bottom: none;
+    }
+}
+
+/* Logo responsiveness */
+.logo-container {
+    max-width: calc(100vw - 80px); /* Account for hamburger button */
+}
+
+/* Prevent horizontal scroll */
+.header-container {
+    min-height: 64px;
+}
