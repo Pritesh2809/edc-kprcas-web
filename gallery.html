@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Head - EDCKPRCAS</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<div class="overlay">
+
+    <div id="header-placeholder"></div>
+
+    <div class="max-w-7xl mx-auto px-4 py-10">
+        <h1 class="text-4xl font-bold text-center text-blue-800 mb-10">EDC Full Photo Gallery</h1>
+
+        <div id="gallery-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Images will be inserted here by JavaScript -->
+        </div>
+
+        <div id="no-images-message" class="text-center text-gray-500 mt-10" style="display: none;">
+            No images found in the gallery.
+        </div>
+
+        <div class="text-center mt-10">
+            <a href="index.html" class="inline-block px-5 py-2 bg-gray-600 text-white rounded hover:bg-gray-700">Back to Home</a>
+        </div>
+    </div>
+
+    <script>
+        // MANUAL IMAGE LIST - Add your image paths here
+        const imageList = [
+            'images/gallery/WhatsApp Image 2025-02-21 at 12.22.39_fd607c92.jpg',
+            'images/gallery/WhatsApp Image 2025-02-21 at 12.22.39_fd607c92.jpg',
+            'images/gallery/WhatsApp Image 2025-02-21 at 12.22.39_fd607c92.jpg',
+            'images/gallery/WhatsApp Image 2025-02-21 at 12.22.39_fd607c92.jpg',
+            'images/gallery/WhatsApp Image 2025-02-21 at 12.22.39_fd607c92.jpg',
+            'images/gallery/WhatsApp Image 2025-02-21 at 12.22.39_fd607c92.jpg',
+            'images/gallery/WhatsApp Image 2025-02-21 at 12.22.39_fd607c92.jpg',
+            'images/gallery/WhatsApp Image 2025-02-21 at 12.22.39_fd607c92.jpg',
+            'images/gallery/WhatsApp Image 2025-02-21 at 12.22.39_fd607c92.jpg',
+            'images/gallery/WhatsApp Image 2025-02-21 at 12.22.39_fd607c92.jpg',
+            'images/gallery/WhatsApp Image 2025-02-21 at 12.22.39_fd607c92.jpg',
+            'images/gallery/WhatsApp Image 2025-02-21 at 12.22.39_fd607c92.jpg',
+            'images/gallery/WhatsApp Image 2025-02-21 at 12.22.39_fd607c92.jpg',
+            'images/gallery/WhatsApp Image 2025-02-21 at 12.22.39_fd607c92.jpg',
+            'images/gallery/WhatsApp Image 2025-02-21 at 12.22.39_fd607c92.jpg',
+            'images/gallery/WhatsApp Image 2025-02-21 at 12.22.39_fd607c92.jpg',
+            'images/gallery/WhatsApp Image 2025-02-21 at 12.22.39_fd607c92.jpg',
+            'images/gallery/WhatsApp Image 2025-02-21 at 12.22.39_fd607c92.jpg',
+            'images/gallery/WhatsApp Image 2025-02-21 at 12.22.39_fd607c92.jpg',
+            'images/gallery/WhatsApp Image 2025-02-21 at 12.22.39_fd607c92.jpg',
+            'images/gallery/WhatsApp Image 2025-02-21 at 12.22.39_fd607c92.jpg',
+            'images/gallery/WhatsApp Image 2025-02-21 at 12.22.39_fd607c92.jpg',
+            'images/gallery/WhatsApp Image 2025-02-21 at 12.22.39_fd607c92.jpg',
+            'images/gallery/WhatsApp Image 2025-02-21 at 12.22.39_fd607c92.jpg',
+            'images/gallery/WhatsApp Image 2025-02-21 at 12.22.39_fd607c92.jpg',
+            'images/gallery/WhatsApp Image 2025-02-21 at 12.22.39_fd607c92.jpg',
+            'images/gallery/WhatsApp Image 2025-02-21 at 12.22.39_fd607c92.jpg',
+            'images/gallery/WhatsApp Image 2025-02-21 at 12.22.39_fd607c92.jpg',
+            'images/gallery/WhatsApp Image 2025-02-21 at 12.22.39_fd607c92.jpg',
+            'images/gallery/WhatsApp Image 2025-02-21 at 12.22.39_fd607c92.jpg',
+
+        ];
+
+        // Display images
+        const galleryContainer = document.getElementById('gallery-container');
+        const noImagesMessage = document.getElementById('no-images-message');
+
+        if (imageList.length > 0) {
+            imageList.forEach((image, index) => {
+                const imgDiv = document.createElement('div');
+                imgDiv.className = `fade-in overflow-hidden rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-500`;
+                imgDiv.style.animationDelay = `${index * 100}ms`;
+
+                const img = document.createElement('img');
+                img.src = image;
+                img.alt = 'Gallery Image';
+                img.className = 'w-full h-56 object-cover';
+                img.loading = 'lazy'; // Add lazy loading
+
+                // Add error handling for missing images
+                img.onerror = function() {
+                    this.style.display = 'none';
+                };
+
+                imgDiv.appendChild(img);
+                galleryContainer.appendChild(imgDiv);
+            });
+        } else {
+            noImagesMessage.style.display = 'block';
+        }
+
+        // Preload images for better user experience
+        function preloadImages() {
+            imageList.forEach(image => {
+                const img = new Image();
+                img.src = image;
+            });
+        }
+
+        // Start preloading after page loads
+        window.addEventListener('load', preloadImages);
+    </script>
+
+    </div>
+
+<div id="footer-placeholder"></div>
+
+
+<script src="index.js"></script>
+</body>
+</html>

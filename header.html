@@ -1,0 +1,50 @@
+<header class="bg-white/90 backdrop-blur-sm backdrop-blur-fallback shadow-md sticky top-0 z-50 transition-transform duration-300 transform border-b border-gray-100">
+  <div class="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 header-container">
+    <div class="flex justify-between items-center h-16">
+
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center space-x-2 logo-container">
+        <img src="https://i.postimg.cc/ZqV4vd7y/EDC-2-1.png" alt="EDC Logo" class="h-8 sm:h-10 w-auto flex-shrink-0" />
+        <span class="text-sm sm:text-lg font-bold text-blue-800  xs:inline truncate">EDC - KPRCAS</span>
+      </a>
+
+      <!-- Hamburger Button -->
+      <button
+              id="mobile-menu-button"
+              class="md:hidden text-blue-800 p-2 rounded-md hover:bg-blue-50 active:bg-blue-100 transition-colors duration-200 "
+              aria-label="Toggle menu"
+              aria-expanded="false"
+              type="button">
+        <svg id="menu-open" class="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
+        </svg>
+        <svg id="menu-close" class="w-6 h-6 sm:w-7 sm:h-7 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex space-x-4 lg:space-x-6 text-sm font-semibold text-gray-700 nav-links" aria-label="Main navigation">
+        <a href="index.html" class="hover:text-blue-600 px-2 py-1 rounded transition-colors duration-200 nav-links">Home</a>
+        <a href="about.html" class="hover:text-blue-600 px-2 py-1 rounded transition-colors duration-200 nav-links">About</a>
+        <a href="head.html" class="hover:text-blue-600 px-2 py-1 rounded transition-colors duration-200 nav-links">Head of Cell</a>
+        <a href="events.html" class="hover:text-blue-600 px-2 py-1 rounded transition-colors duration-200 nav-links">Events</a>
+        <a href="achievements.html" class="hover:text-blue-600 px-2 py-1 rounded transition-colors duration-200 nav-links">Achievements</a>
+        <a href="gallery.html" class="hover:text-blue-600 px-2 py-1 rounded transition-colors duration-200 nav-links">Gallery</a>
+        <a href="contact.html" class="hover:text-blue-600 px-2 py-1 rounded transition-colors duration-200 nav-links">Contact</a>
+      </nav>
+    </div>
+
+    <!-- Mobile Nav -->
+    <div id="mobile-menu" class="md:hidden hidden mobile-menu-transition bg-white border-t border-gray-200 -mx-3 sm:-mx-4">
+      <nav class="px-3 sm:px-4 py-2" aria-label="Mobile navigation">
+        <a href="index.html" class="mobile-nav-link text-gray-800 hover:text-blue-700 hover:bg-blue-50 px-2 rounded transition-colors duration-200">Home</a>
+        <a href="about.html" class="mobile-nav-link text-gray-800 hover:text-blue-700 hover:bg-blue-50 px-2 rounded transition-colors duration-200">About</a>
+        <a href="head.html" class="mobile-nav-link text-gray-800 hover:text-blue-700 hover:bg-blue-50 px-2 rounded transition-colors duration-200">Head of Cell</a>
+        <a href="achievements.html" class="mobile-nav-link text-gray-800 hover:text-blue-700 hover:bg-blue-50 px-2 rounded transition-colors duration-200">Achievements</a>
+        <a href="gallery.html" class="mobile-nav-link text-gray-800 hover:text-blue-700 hover:bg-blue-50 px-2 rounded transition-colors duration-200">Gallery</a>
+        <a href="contact.html" class="mobile-nav-link text-gray-800 hover:text-blue-700 hover:bg-blue-50 px-2 rounded transition-colors duration-200">Contact</a>
+      </nav>
+    </div>
+  </div>
+</header>
