@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EDC - KPRCAS</title>
+  <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/ZqV4vd7y/EDC-2-1.png">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/header.css">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
@@ -26,19 +27,7 @@
       gap: 1rem;
       padding-bottom: 1rem;
     }
-
-/*     .mentor-card {
-      flex: 0 0 80%;
-      max-width: 31%;
-      scroll-snap-align: start;
-    } */
-
-    /* Hide scrollbar */
-    .slider-group::-webkit-scrollbar {
-      display: none;
-    }
   }
-
   /* DESKTOP VIEW: Normal 3-card rows */
   @media (min-width: 640px) {
     .slider-group {
@@ -72,7 +61,9 @@
   <!-- Header will load here -->
   <div id="header-placeholder"></div>
 
+
   <br>
+
   <section class="py-8 md:py-16 text-center px-4">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-3xl md:text-5xl font-bold text-blue-800 mb-4">Welcome to EDC - KPRCAS</h1>
@@ -80,6 +71,7 @@
       <a href="about.html" class="bg-blue-600 text-white px-6 py-3 rounded-full font-medium hover:bg-blue-700 transition inline-block">Know More</a>
     </div>
   </section>
+
 
   <!-- Stats Section - Made more compact for mobile -->
   <section class="max-w-6xl mx-auto py-6 md:py-10 px-4 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 text-center">
@@ -101,6 +93,7 @@
     </div>
   </section>
 
+
   <!-- Achievements Section -->
   <section class="py-10 team-card">
     <div class="max-w-6xl mx-auto px-4">
@@ -109,29 +102,92 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
 
         <!-- NEC 2024 -->
-        <div class="bg-gray-100 rounded-lg shadow hover:shadow-lg transition p-4">
+        <div class="bg-gray-100 rounded-lg shadow hover:shadow-lg transition p-4 cursor-pointer achievement-card" data-title="NEC 2024" data-detail="EDC KPRCAS Secures 14th Rank in IIT Bombay's National Entrepreneurship Challenge
+
+The Entrepreneurship Development Cell (EDC) – KPRCAS proudly secured the 14th rank out of over 600 participating colleges in the prestigious National Entrepreneurship Challenge (NEC) conducted by IIT Bombay — a journey that tested our entrepreneurial spirit like never before.
+
+This six-month-long challenge began in September 2024 and concluded with the Grand Finale on February 1st and 2nd, 2025, held at the IIT Bombay campus. The event involved completing over 15 dynamic tasks including entrepreneurship awareness drives, startup ideation, outreach campaigns, workshops, and content creation — each evaluated directly by IIT Bombay’s E-Cell.
+
+Our team, composed of five passionate students — Bavishnu (B.Sc. CSDA), Aadhavan (BBA CA), Barani Sri (BBA CA), Ashwin (B.Sc. AIML), and Pritesh (B.Sc. AIML) — carried the name of KPRCAS with pride and commitment. Supporting the team throughout the project was our dedicated volunteer Dharaneesh (B.Sc. AIML), whose behind-the-scenes efforts were crucial to the smooth execution of every task.
+
+Despite the competition allowing up to 20 members per team, this compact group of just five members and one volunteer achieved something extraordinary through sheer determination, creativity, and unity. The proudest moment arrived in the first week of January 2025, when we were officially selected as finalists for the NEC Grand Finale at IIT Bombay.
+
+This achievement is not just a rank — it’s a reflection of what can be accomplished through consistent effort, teamwork, and the courage to dream big. The journey of EDC KPRCAS in NEC will forever remain an inspiring chapter for future innovators and changemakers of our institution.">
           <img src="https://i.postimg.cc/xjRfWByP/NEC-MUMBAI.jpg" alt="EDC team at NEC 2024" loading="lazy" class="w-full h-48 object-cover rounded-md mb-3">
           <h3 class="text-lg font-semibold text-gray-800">NEC 2024</h3>
           <p class="text-sm text-gray-600">Secured 14th position among 600 colleges at IIT Bombay.</p>
         </div>
 
         <!-- WEC 2025 -->
-        <div class="bg-gray-100 rounded-lg shadow hover:shadow-lg transition p-4">
+        <div class="bg-gray-100 rounded-lg shadow hover:shadow-lg transition p-4 cursor-pointer achievement-card" data-title="WEC 2025" data-detail="EDC KPRCAS Secures 9th Rank in Western Entrepreneurship Challenge
+
+After proving our capability in national-level entrepreneurial challenges, EDC KPRCAS once again made its mark by securing an impressive 9th rank in the Western Entrepreneurship Challenge (WEC) — a platform that tested the speed, strategy, and creativity of young entrepreneurial minds across India.
+
+This achievement came through sheer dedication, with the same core team that previously succeeded in NEC: Bavishnu (B.Sc. CSDA), Aadhavan (BBA CA), Barani Sri (BBA CA), Ashwin (B.Sc. AIML), and Pritesh (B.Sc. AIML), along with our continuous support system, volunteer Dharaneesh (B.Sc. AIML).
+
+The WEC was a two-month-long challenge, shorter in duration but intense in pace. From start to finish, it demanded sharp execution, creative planning, and team coordination. The event featured 10 challenging tasks, which included startup idea presentations, social media campaigns, entrepreneurial case studies, local outreach events, problem-solving scenarios, and more — all designed to test how well teams could apply entrepreneurial thinking in real time.
+">
           <img src="https://i.postimg.cc/5y32gRpn/IMG-7855.jpg" alt="EDC team at WEC 2025" loading="lazy" class="w-full h-48 object-cover rounded-md mb-3">
           <h3 class="text-lg font-semibold text-gray-800">WEC 2025</h3>
           <p class="text-sm text-gray-600">Achieved 9th rank in National Entrepreneurship Challenge.</p>
         </div>
 
-        <!-- Eureka 2024 -->
-        <div class="bg-gray-100 rounded-lg shadow hover:shadow-lg transition p-4">
-          <img src="https://i.postimg.cc/rwtLFHW3/euraka-24.jpg" alt="EDC team at Eureka 2024" loading="lazy" class="w-full h-48 object-cover rounded-md mb-3">
-          <h3 class="text-lg font-semibold text-gray-800">Eureka 2024</h3>
-          <p class="text-sm text-gray-600">Reached semi-finals in IIT Bombay's Eureka Startup Competition.</p>
+        <!-- Student Ventures -->
+        <div class="bg-gray-100 rounded-lg shadow hover:shadow-lg transition p-4 cursor-pointer achievement-card" data-title="7 Student Ventures" data-detail="Student Venture Initiative at KPRCAS – Turning Ideas into Action
+
+At KPR College of Arts Science and Research (KPRCAS), entrepreneurship is not just taught — it is experienced. Our college strongly believes that the best way to learn business is by doing business. To nurture this spirit among students, KPRCAS has proudly introduced a Student Venture Program — a platform where young minds can transform their ideas into real-life ventures right from within the campus.
+
+This initiative encourages students who are passionate about business and innovation to present their ideas, which are then carefully evaluated by a review committee that checks the eco-friendliness, sustainability, and feasibility of the proposed venture. Once the idea is approved, students are provided with the resources and space they need — rent-free — to begin their entrepreneurial journey.
+
+Whether it's a passion for food, a creative solution to a campus need, or a smart service-based idea, students are empowered to bring their concepts to life. The college offers dedicated shop spaces and supports these ventures through mentoring, encouragement, and visibility within the campus.
+
+Thanks to this initiative, more than seven student-run ventures have already been successfully launched. These include snack stalls, juice counters, coffee vending services, fruit salad stations, and even automated vending machines — all managed and operated by students themselves.
+">
+          <img src="https://i.postimg.cc/3r4fJMFM/7-students.jpg" alt="Student Ventures" loading="lazy" class="w-full h-48 object-cover rounded-md mb-3">
+          <h3 class="text-lg font-semibold text-gray-800">7 Student Ventures</h3>
+          <p class="text-sm text-gray-600">Seven active student ventures are currently incubated and operational in our college campus.</p>
         </div>
 
       </div>
     </div>
   </section>
+
+  <!-- Modal Structure -->
+  <div id="achievementModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+    <div class="bg-white rounded-lg shadow-lg max-w-lg w-full p-6 relative">
+      <button id="modalClose" class="absolute top-2 right-2 text-gray-600 hover:text-gray-900 font-bold text-xl">&times;</button>
+      <h3 id="modalTitle" class="text-2xl font-bold mb-4"></h3>
+      <p id="modalDetail" class="text-gray-700"></p>
+    </div>
+  </div>
+
+  <script>
+    // Grab modal elements
+    const modal = document.getElementById('achievementModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDetail = document.getElementById('modalDetail');
+    const modalClose = document.getElementById('modalClose');
+
+    // Attach click events to all achievement cards
+    document.querySelectorAll('.achievement-card').forEach(card => {
+      card.addEventListener('click', () => {
+        modalTitle.textContent = card.dataset.title;
+        modalDetail.textContent = card.dataset.detail;
+        modal.classList.remove('hidden');
+      });
+    });
+
+    // Close modal on clicking close button or outside modal content
+    modalClose.addEventListener('click', () => {
+      modal.classList.add('hidden');
+    });
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.add('hidden');
+      }
+    });
+  </script>
 
 
 
@@ -183,6 +239,7 @@
       </div>
     </div>
   </section>
+
 
   <!-- Mentors Section -->
   <section class="py-16 bg-transparent relative" aria-label="Our Mentors">

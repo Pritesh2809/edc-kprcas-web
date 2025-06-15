@@ -1,13 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Head - EDCKPRCAS</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/header.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EDC Moments & Highlights - KPRCAS</title>
+    <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/ZqV4vd7y/EDC-2-1.png" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/header.css" />
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <style>
+        /* Optional fade-in animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .fade-in {
+            animation: fadeInUp 0.5s ease forwards;
+            opacity: 0;
+        }
+    </style>
 </head>
 <body>
 
@@ -15,92 +33,97 @@
 
     <div id="header-placeholder"></div>
 
-    <div class="max-w-7xl mx-auto px-4 py-10">
-        <h1 class="text-4xl font-bold text-center text-blue-800 mb-10">EDC Full Photo Gallery</h1>
+    <main class="max-w-7xl mx-auto px-4 py-10">
+        <h1 class="text-4xl font-bold text-center text-blue-800 mb-12">EDC Moments &amp; Highlights</h1>
 
-        <div id="gallery-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            <!-- Images will be inserted here by JavaScript -->
-        </div>
+        <section
+                id="gallery-container"
+                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+                aria-label="Entrepreneurship Development Cell photo highlights"
+        >
+            <!-- Images inserted by JavaScript -->
+        </section>
 
-        <div id="no-images-message" class="text-center text-gray-500 mt-10" style="display: none;">
+        <p
+                id="no-images-message"
+                class="text-center text-gray-500 mt-10"
+                style="display: none;"
+                role="alert"
+                aria-live="polite"
+        >
             No images found in the gallery.
+        </p>
+
+        <div class="text-center mt-12">
+            <a
+                    href="index.html"
+                    class="inline-block px-6 py-3 bg-gray-600 text-white rounded-md hover:bg-gray-700 transition"
+                    aria-label="Back to homepage"
+            >
+                <i class="fas fa-home mr-2"></i>Back to Home
+            </a>
         </div>
+    </main>
 
-        <div class="text-center mt-10">
-            <a href="index.html" class="inline-block px-5 py-2 bg-gray-600 text-white rounded hover:bg-gray-700">Back to Home</a>
-        </div>
-    </div>
+    <div id="footer-placeholder"></div>
 
-    <script>
-        // MANUAL IMAGE LIST - Add your image paths here
-        const imageList = [
-            'https://i.postimg.cc/xjRfWByP/NEC-MUMBAI.jpg',
-            'https://i.postimg.cc/5y32gRpn/IMG-7855.jpg',
-            'https://i.postimg.cc/rwtLFHW3/euraka-24.jpg',
-            'https://i.postimg.cc/R0W9yRbm/59fdb8aa6cd84924a4f91119b8118552.jpg',
-            'https://i.postimg.cc/Qt5DxM3n/031f7192607d492a85ac1367de4736f7.jpg',
-            'https://i.postimg.cc/MKtSG4Cx/31b22d73f82a4f049672b743c88b369c.jpg',
-            'https://i.postimg.cc/MHm8VrX7/4d7bddb198fc49dca572f22d35c3f6b1.jpg',
-            'https://i.postimg.cc/cJtyXJr4/8467cff325e44bf2b3310cc19dbd77a7.jpg',
-            'https://i.postimg.cc/gjWWwPcc/9093416e8a904843bb91f25bf3ae3890.jpg',
-            'https://i.postimg.cc/LXdd7M1k/94b53a3fc78046589e821f8d8273b35d.jpg',
-            'https://i.postimg.cc/nhzt92xm/a1f347cfd0b6400ca9e3574914133083.jpg',
-            'https://i.postimg.cc/mg5WY9Z5/e4d29797b7f14517bbdec3e3a87c10c5.jpg',
-            'https://i.postimg.cc/CMG03dJR/ff0a7e5aeb074e55a19610d3b905a1f9.jpg',
-            'https://i.postimg.cc/W3SnZGTD/6dd568a0f4c04437b36a69c5a94e8ac9.jpg',
-            'https://i.postimg.cc/dQH6tj5p/7b06e4373008499ba26ff2199334523e.jpg',
-            'https://i.postimg.cc/qqRGxNv1/8a7c6ab3ca9c4360b1509195315e759a.jpg',
-            'https://i.postimg.cc/vH4z1xjB/cc67f33d355640da8069b9c63d17587d.jpg',
-            'https://i.postimg.cc/76q9bs88/eee806a2e5bf4712a69ca4e9b8750875.jpg',
-            'https://i.postimg.cc/HWh0CsxC/dd0162ceb08b42d49d3792b800612664.jpg'
+</div>
 
+<script>
+    // Corrected image list (removed extra comma)
+    const imageList = [
+        'https://i.postimg.cc/xjRfWByP/NEC-MUMBAI.jpg',
+        'https://i.postimg.cc/rwtLFHW3/euraka-24.jpg',
+        'https://i.postimg.cc/R0W9yRbm/59fdb8aa6cd84924a4f91119b8118552.jpg',
+        'https://i.postimg.cc/Qt5DxM3n/031f7192607d492a85ac1367de4736f7.jpg',
+        'https://i.postimg.cc/MHm8VrX7/4d7bddb198fc49dca572f22d35c3f6b1.jpg',
+        'https://i.postimg.cc/cJtyXJr4/8467cff325e44bf2b3310cc19dbd77a7.jpg',
+        'https://i.postimg.cc/gjWWwPcc/9093416e8a904843bb91f25bf3ae3890.jpg',
+        'https://i.postimg.cc/LXdd7M1k/94b53a3fc78046589e821f8d8273b35d.jpg',
+        'https://i.postimg.cc/nhzt92xm/a1f347cfd0b6400ca9e3574914133083.jpg',
+        'https://i.postimg.cc/mg5WY9Z5/e4d29797b7f14517bbdec3e3a87c10c5.jpg',
+        'https://i.postimg.cc/CMG03dJR/ff0a7e5aeb074e55a19610d3b905a1f9.jpg',
+        'https://i.postimg.cc/W3SnZGTD/6dd568a0f4c04437b36a69c5a94e8ac9.jpg',
+        'https://i.postimg.cc/dQH6tj5p/7b06e4373008499ba26ff2199334523e.jpg',
+        'https://i.postimg.cc/vH4z1xjB/cc67f33d355640da8069b9c63d17587d.jpg',
+        'https://i.postimg.cc/76q9bs88/eee806a2e5bf4712a69ca4e9b8750875.jpg',
+        'https://i.postimg.cc/HWh0CsxC/dd0162ceb08b42d49d3792b800612664.jpg'
+    ];
 
-        ];
+    const galleryContainer = document.getElementById('gallery-container');
+    const noImagesMessage = document.getElementById('no-images-message');
 
-        // Display images
-        const galleryContainer = document.getElementById('gallery-container');
-        const noImagesMessage = document.getElementById('no-images-message');
+    if (imageList.length > 0) {
+        imageList.forEach((image, index) => {
+            const imgDiv = document.createElement('div');
+            imgDiv.className = `fade-in overflow-hidden rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-500`;
+            imgDiv.style.animationDelay = `${index * 100}ms`;
 
-        if (imageList.length > 0) {
-            imageList.forEach((image, index) => {
-                const imgDiv = document.createElement('div');
-                imgDiv.className = `fade-in overflow-hidden rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-500`;
-                imgDiv.style.animationDelay = `${index * 100}ms`;
+            const img = document.createElement('img');
+            img.src = image;
+            img.alt = `EDC Event photo ${index + 1}`;
+            img.className = 'w-full h-56 object-cover';
+            img.loading = 'lazy';
 
-                const img = document.createElement('img');
-                img.src = image;
-                img.alt = 'Gallery Image';
-                img.className = 'w-full h-56 object-cover';
-                img.loading = 'lazy'; // Add lazy loading
+            img.onerror = () => {
+                img.style.display = 'none';
+            };
 
-                // Add error handling for missing images
-                img.onerror = function() {
-                    this.style.display = 'none';
-                };
+            imgDiv.appendChild(img);
+            galleryContainer.appendChild(imgDiv);
+        });
+    } else {
+        noImagesMessage.style.display = 'block';
+    }
 
-                imgDiv.appendChild(img);
-                galleryContainer.appendChild(imgDiv);
-            });
-        } else {
-            noImagesMessage.style.display = 'block';
-        }
-
-        // Preload images for better user experience
-        function preloadImages() {
-            imageList.forEach(image => {
-                const img = new Image();
-                img.src = image;
-            });
-        }
-
-        // Start preloading after page loads
-        window.addEventListener('load', preloadImages);
-    </script>
-
-    </div>
-
-<div id="footer-placeholder"></div>
-
+    // Preload images after page load
+    window.addEventListener('load', () => {
+        imageList.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+    });
+</script>
 
 <script src="index.js"></script>
 </body>

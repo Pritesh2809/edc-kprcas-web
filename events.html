@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Head - EDCKPRCAS</title>
+  <title>Events - EDCKPRCAS</title>
+  <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/ZqV4vd7y/EDC-2-1.png">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/header.css">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
@@ -16,71 +17,154 @@
   <!-- Events Intro -->
   <section class=" py-16">
     <div class="text-center max-w-4xl mx-auto px-4">
-      <h2 class="text-4xl font-bold text-blue-800 mb-4">Our Year-Round Activities</h2>
+      <h2 class="text-4xl font-bold text-blue-800 mb-4">Our Events</h2>
       <p class="text-gray-700 text-lg">
         EDC-KPRCAS conducts practical and impactful events to help students become real entrepreneurs. From market stalls to investor pitches, every event is a step forward.
       </p>
     </div>
   </section>
+  <!-- Upcoming Events Section -->
+  <section class="max-w-4xl mx-auto py-16 px-6">
+    <div class="bg-white p-8 rounded-xl shadow">
+      <h2 class="text-3xl font-bold text-center text-green-700 mb-8">📢 Upcoming Events</h2>
 
-  <!-- Events Grid -->
-  <section class="max-w-6xl mx-auto py-16 px-6 grid gap-8 grid-cols-1 md:grid-cols-2">
-    <!-- Example Event -->
-    <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-      <h3 class="text-2xl font-semibold text-blue-700 mb-2">🧭 January: Student Food Venture Launch</h3>
-      <p class="text-gray-700">4 student entrepreneurs launched a rent-free food venture in the canteen – our first real-world startup initiative.</p>
-    </div>
+      <div class="space-y-6" id="upcoming-events">
 
-    <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-      <h3 class="text-2xl font-semibold text-blue-700 mb-2">💼 February: Meet with CEO</h3>
-      <p class="text-gray-700">Hosted Mr. Mahesh Gopalakrishnan, CEO of Crayon’d, to mentor students on refining business ideas and networking strategies.</p>
-    </div>
+        <!-- Event 1: Furitacy Launch -->
+        <div class="event-card bg-green-50 border-l-4 border-green-600 p-4 rounded-md shadow-sm hover:shadow-md transition"
+             data-date="2025-06-16">
+          <h3 class="text-xl font-semibold text-green-800">🍓 Grand Launch of Furitacy</h3>
+          <p class="text-gray-700">Official launch of <strong>Furitacy</strong> – a student-led fruit-based startup promoting healthy, sustainable snacks.</p>
+          <p class="text-sm text-gray-600 mt-2">📅 <strong>16 June 2025</strong>
+            <span class="ml-2 text-xs font-semibold bg-green-200 text-green-800 px-2 py-1 rounded countdown-badge"></span>
+          </p>
+        </div>
 
-    <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-      <h3 class="text-2xl font-semibold text-blue-700 mb-2">🌍 March: Cultural Fest Business Stalls</h3>
-      <p class="text-gray-700">Students ran food stalls, gift shops, baking setups, and course sales — building business and communication skills.</p>
-    </div>
+        <!-- Event 2: EDC Stall Fest '25 -->
+        <div class="event-card bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded-md shadow-sm hover:shadow-md transition"
+             data-date="2025-08-21">
+          <h3 class="text-xl font-semibold text-yellow-700">🛍️ EDC Stall Fest '25</h3>
+          <p class="text-gray-700">Celebrate <strong>World Entrepreneurs' Day</strong> with our vibrant stall fest featuring student-led startups in action.</p>
+          <p class="text-sm text-gray-600 mt-2">📅 <strong>21 August 2025</strong>
+            <span class="ml-2 text-xs font-semibold bg-yellow-200 text-yellow-800 px-2 py-1 rounded countdown-badge"></span>
+          </p>
+        </div>
 
-    <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-      <h3 class="text-2xl font-semibold text-blue-700 mb-2">📚 April: 2-Day IPR Workshop</h3>
-      <p class="text-gray-700">Sessions on patents, trademarks, and business registration to build legal knowledge and startup readiness.</p>
-    </div>
-
-    <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-      <h3 class="text-2xl font-semibold text-blue-700 mb-2">🎓 June: Freshers' Orientation</h3>
-      <p class="text-gray-700">New students joined the cell without criteria — purely based on entrepreneurial interest. Team size: 50+ committed members.</p>
-    </div>
-
-    <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-      <h3 class="text-2xl font-semibold text-blue-700 mb-2">🏭 July: Industrial Visit + Workshop</h3>
-      <p class="text-gray-700">Visit to innovation hubs + workshop on identifying social problems and innovative solutions.</p>
-    </div>
-
-    <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-      <h3 class="text-2xl font-semibold text-blue-700 mb-2">🛍️ August: Sell Your Product</h3>
-      <p class="text-gray-700">Students created and sold products on campus to test market viability. Ended with reflective presentation sessions.</p>
-    </div>
-
-    <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-      <h3 class="text-2xl font-semibold text-blue-700 mb-2">🧠 September: Design Thinking Bootcamp</h3>
-      <p class="text-gray-700">Bootcamp on moving from ideation to prototyping with hands-on design thinking techniques.</p>
-    </div>
-
-    <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-      <h3 class="text-2xl font-semibold text-blue-700 mb-2">⚙️ October: Hackathon + Prototype Building</h3>
-      <p class="text-gray-700">One-month prototyping challenge ending in a hackathon judged by industry experts.</p>
-    </div>
-
-    <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-      <h3 class="text-2xl font-semibold text-blue-700 mb-2">🎤 November: Investor Pitching Training</h3>
-      <p class="text-gray-700">Experts trained students in pitch decks, confidence, and investment language. Ideas refined for final pitch.</p>
-    </div>
-
-    <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-      <h3 class="text-2xl font-semibold text-blue-700 mb-2">🦈 December: Shark Tank Event</h3>
-      <p class="text-gray-700">Top ideas pitched in front of judges and selected for incubation support. Winners entered the EDC pipeline for development.</p>
+      </div>
     </div>
   </section>
+
+  <!-- Countdown Badge Script -->
+  <script>
+    document.querySelectorAll('.event-card').forEach(card => {
+      const eventDate = new Date(card.getAttribute('data-date'));
+      const today = new Date();
+      const diffTime = eventDate - today;
+      const daysLeft = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      const badge = card.querySelector('.countdown-badge');
+
+      if (daysLeft > 1) {
+        badge.textContent = `${daysLeft} Days Left`;
+      } else if (daysLeft === 1) {
+        badge.textContent = `Tomorrow`;
+      } else if (daysLeft === 0) {
+        badge.textContent = `Today`;
+      } else {
+        badge.textContent = `Event Ended`;
+        badge.classList.add('bg-gray-300', 'text-gray-600');
+        badge.classList.remove('bg-yellow-200', 'text-yellow-800', 'bg-green-200', 'text-green-800');
+      }
+    });
+  </script>
+
+
+
+
+
+  <!-- Events Grid -->
+  <section class="max-w-6xl mx-auto py-16 px-6">
+    <!-- Section Title -->
+    <h2 class="text-3xl font-bold text-center text-blue-800 mb-12">📅 EDC Events (2024–2025)</h2>
+
+    <!-- Grid Layout -->
+    <div class="grid gap-8 grid-cols-1 md:grid-cols-2">
+
+      <!-- June 2024 -->
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h3 class="text-2xl font-semibold text-blue-700 mb-2">🎓 June 2024: Freshers' Orientation</h3>
+        <p class="text-gray-700">Welcomed new members without selection criteria — purely based on entrepreneurial interest. Built a team of 50+ committed students.</p>
+      </div>
+
+      <!-- July 2024 -->
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h3 class="text-2xl font-semibold text-blue-700 mb-2">🏭 July 2024: Industrial Visit + Problem Solving Workshop</h3>
+        <p class="text-gray-700">Visited innovation hubs and conducted workshops on identifying social issues and designing solutions.</p>
+      </div>
+
+      <!-- August 2024 -->
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h3 class="text-2xl font-semibold text-blue-700 mb-2">🛍️ August 2024: Sell Your Product</h3>
+        <p class="text-gray-700">Students developed and sold products to test real market demand. Wrapped up with a reflective presentation session.</p>
+      </div>
+
+      <!-- September 2024 -->
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h3 class="text-2xl font-semibold text-blue-700 mb-2">🧠 September 2024: Design Thinking Bootcamp</h3>
+        <p class="text-gray-700">Conducted a bootcamp to transition ideas into prototypes using structured design thinking methods.</p>
+      </div>
+
+      <!-- October 2024 -->
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h3 class="text-2xl font-semibold text-blue-700 mb-2">🚀 October 2024: Eureka’24 – IIT Bombay</h3>
+        <p class="text-gray-700">Team EDC-KPRCAS participated in <strong>Eureka’24</strong>, Asia’s largest business model competition hosted by <strong>E-Cell IIT Bombay</strong>. Gained national exposure and valuable feedback from top mentors and investors.</p>
+      </div>
+
+      <!-- November 2024 -->
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h3 class="text-2xl font-semibold text-blue-700 mb-2">🎤 November 2024: Investor Pitching Training</h3>
+        <p class="text-gray-700">Industry experts coached students on pitch deck creation, delivery skills, and funding communication techniques.</p>
+      </div>
+
+      <!-- December 2024 -->
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h3 class="text-2xl font-semibold text-blue-700 mb-2">🌟 December 2024: Illuminate’24 with E-Cell IIT Bombay</h3>
+        <p class="text-gray-700">Organized <strong>Illuminate’24</strong>, a flagship entrepreneurship workshop in collaboration with <strong>E-Cell IIT Bombay</strong>. Students explored business modeling, startup validation, and investor readiness through expert-led sessions.</p>
+      </div>
+
+      <!-- January 2025 -->
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h3 class="text-2xl font-semibold text-blue-700 mb-2">🧭 January 2025: Student Food Venture Launch</h3>
+        <p class="text-gray-700">4 student entrepreneurs launched a rent-free food venture on campus, marking EDC’s first operational startup success.</p>
+      </div>
+
+      <!-- February 2025 -->
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h3 class="text-2xl font-semibold text-blue-700 mb-2">💼 February 2025: Meet with CEO</h3>
+        <p class="text-gray-700">Hosted Mr. Mahesh Gopalakrishnan, CEO of Crayon’d, to guide students on pitching, ideation, and market validation.</p>
+      </div>
+
+      <!-- March 2025 -->
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h3 class="text-2xl font-semibold text-blue-700 mb-2">🌍 March 2025: Cultural Fest Business Stalls</h3>
+        <p class="text-gray-700">Students sold food, gifts, and services during the college fest to gain live sales, marketing, and budgeting experience.</p>
+      </div>
+
+      <!-- April 2025 -->
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h3 class="text-2xl font-semibold text-blue-700 mb-2">📚 April 2025: 2-Day IPR Workshop</h3>
+        <p class="text-gray-700">Covered patents, trademarks, and business registrations to equip students with essential startup legal knowledge.</p>
+      </div>
+
+      <!-- May 2025 -->
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h3 class="text-2xl font-semibold text-blue-700 mb-2">🚀 May 2025: Venture Review & Strategic Planning</h3>
+        <p class="text-gray-700">Reviewed progress of all ventures, identified next steps, and designed the roadmap for upcoming incubation and scaling.</p>
+      </div>
+
+    </div>
+  </section>
+
+
 
   <!-- Quarterly Summary -->
   <section class="bg-blue-50 py-12">
