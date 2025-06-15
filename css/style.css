@@ -1,3 +1,4 @@
+
 body {
     margin: 0;
     font-family: sans-serif;
@@ -33,6 +34,10 @@ body {
     100% { opacity: 1; transform: scale(1); }
 }
 
+
+
+
+
 @keyframes slide-up {
     0% { opacity: 0; transform: translateY(30px); }
     100% { opacity: 1; transform: translateY(0); }
@@ -56,18 +61,7 @@ body {
 .slider-group.active {
     display: flex;
 }
-/*.dot-indicator {*/
-/*    width: 12px;*/
-/*    height: 12px;*/
-/*    border-radius: 50%;*/
-/*    background-color: #ccc;*/
-/*    margin: 0 5px;*/
-/*    cursor: pointer;*/
-/*    transition: background-color 0.3s ease;*/
-/*}*/
-/*.dot-indicator.active {*/
-/*    background-color: #2563eb;*/
-/*}*/
+
 .fade-in {
     animation: fadeIn 1s ease-in;
 }
@@ -86,3 +80,4 @@ body {
     animation: fadeIn 1s ease-in-out forwards;
     /* "forwards" keeps the final state of the animation */
 }
+

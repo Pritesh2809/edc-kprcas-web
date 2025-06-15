@@ -7,56 +7,64 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/header.css">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-  <style>
-    /* Custom styles for better mobile responsiveness */
-    .stats-container {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
+<style>
 
-    @media (min-width: 640px) {
-      .stats-container {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-      }
-    }
+  /* Base styling for mentor cards */
+  .mentor-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    text-align: center;
+  }
 
-    .achievement-card, .team-card, .mentor-card {
-      width: 100%;
-      max-width: 100%;
-    }
-
-    @media (min-width: 640px) {
-      .achievement-card {
-        max-width: none;
-      }
-      .team-card, .mentor-card {
-        width: 16rem;
-      }
-    }
-
+  /* MOBILE VIEW: Horizontal scroll */
+  @media (max-width: 639px) {
     .slider-group {
-      display: none;
-      width: 100%;
+      display: flex !important;
       overflow-x: auto;
+      flex-wrap: nowrap;
       scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      gap: 1rem;
       padding-bottom: 1rem;
     }
 
-    .slider-group.active {
-      display: flex;
+    .mentor-card {
+      flex: 0 0 80%;
+      max-width: 80%;
+      scroll-snap-align: start;
+    }
+
+    /* Hide scrollbar */
+    .slider-group::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  /* DESKTOP VIEW: Normal 3-card rows */
+  @media (min-width: 640px) {
+    .slider-group {
+      display: flex !important;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
     }
 
     .mentor-card {
-      scroll-snap-align: start;
-      flex: 0 0 auto;
-      margin: 0 0.5rem;
-    }
-
-    /* Prevent horizontal scrolling on mobile */
-    html, body {
-      overflow-x: hidden;
+      width: 320px;
       max-width: 100%;
+      flex: 0 0 auto;
     }
-  </style>
+  }
+
+  /* Utility for showing/hiding groups */
+  .slider-group.hidden {
+    display: none !important;
+  }
+
+
+</style>
 </head>
 
 <body>
@@ -97,7 +105,7 @@
   </section>
 
   <!-- Achievements Section -->
-  <section class="py-10">
+  <section class="py-10 team-card">
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-2xl md:text-3xl font-bold text-blue-800 mb-6 text-center">Special Achievements</h2>
 
@@ -131,55 +139,54 @@
 
 
   <!-- Our Team Section -->
-<section class="py-8 md:py-16">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center">
-      <h2 class="text-2xl md:text-4xl font-extrabold text-blue-800 mb-8 md:mb-14 tracking-tight">
-        Meet Our Team <span class="text-blue-600">(2024–2025)</span>
-      </h2>
+  <section class="py-8 md:py-6 ">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="text-2xl md:text-4xl font-extrabold text-blue-800 mb-8 md:mb-14 tracking-tight">
+          Meet Our Team <span class="text-blue-600">(2024–2025)</span>
+        </h2>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-4 md:gap-8 px-2">
+        <!-- Team Member Card -->
+        <div class="bg-white rounded-2xl shadow-lg p-4 md:p-6 w-[160px] sm:w-64 text-center transform hover:scale-105 transition duration-300">
+          <img src="https://i.postimg.cc/w3Kf09Td/baavi-anna.jpg" alt="Bavishnu M"
+               class="w-20 h-20 md:w-28 md:h-28 mx-auto rounded-full object-cover mb-3 md:mb-4 border-4 border-blue-200">
+          <h3 class="text-sm md:text-lg font-bold text-blue-700">Bavishnu M</h3>
+          <p class="text-xs md:text-sm text-gray-600">Team Leader</p>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-lg p-4 md:p-6 w-[160px] sm:w-64 text-center transform hover:scale-105 transition duration-300">
+          <img src="https://i.postimg.cc/c1Kd9T4D/andy.jpg" alt="Aadhavan GJ"
+               class="w-20 h-20 md:w-28 md:h-28 mx-auto rounded-full object-cover mb-3 md:mb-4 border-4 border-blue-200">
+          <h3 class="text-sm md:text-lg font-bold text-blue-700">Aadhavan GJ</h3>
+          <p class="text-xs md:text-sm text-gray-600">Documentation & HR</p>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-lg p-4 md:p-6 w-[160px] sm:w-64 text-center transform hover:scale-105 transition duration-300">
+          <img src="https://i.postimg.cc/mDNfyFbR/Asw-in-K.jpg" alt="Aswin K"
+               class="w-20 h-20 md:w-28 md:h-28 mx-auto rounded-full object-cover mb-3 md:mb-4 border-4 border-blue-200">
+          <h3 class="text-sm md:text-lg font-bold text-blue-700">Aswin K</h3>
+          <p class="text-xs md:text-sm text-gray-600">Design Thinking</p>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-lg p-4 md:p-6 w-[160px] sm:w-64 text-center transform hover:scale-105 transition duration-300">
+          <img src="https://i.postimg.cc/x8twWDJ4/Pritesh-Photo.jpg" alt="Pritesh RS"
+               class="w-20 h-20 md:w-28 md:h-28 mx-auto rounded-full object-cover mb-3 md:mb-4 border-4 border-blue-200">
+          <h3 class="text-sm md:text-lg font-bold text-blue-700">Pritesh RS</h3>
+          <p class="text-xs md:text-sm text-gray-600">Editor & Social Media</p>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-lg p-4 md:p-6 w-[160px] sm:w-64 text-center transform hover:scale-105 transition duration-300">
+          <img src="https://i.postimg.cc/gjz9SkJh/Dharaneesh-SS.jpg" alt="Dharaneesh S"
+               class="w-20 h-20 md:w-28 md:h-28 mx-auto rounded-full object-cover mb-3 md:mb-4 border-4 border-blue-200">
+          <h3 class="text-sm md:text-lg font-bold text-blue-700">Dharaneesh S</h3>
+          <p class="text-xs md:text-sm text-gray-600">Editor & Social Media</p>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="flex flex-wrap justify-center gap-4 md:gap-8 px-2">
-      <!-- Team Member Card -->
-      <div class="bg-white rounded-2xl shadow-lg p-4 md:p-6 w-[160px] sm:w-64 text-center transform hover:scale-105 transition duration-300">
-        <img src="https://i.postimg.cc/w3Kf09Td/baavi-anna.jpg" alt="Bavishnu M" 
-             class="w-20 h-20 md:w-28 md:h-28 mx-auto rounded-full object-cover mb-3 md:mb-4 border-4 border-blue-200">
-        <h3 class="text-sm md:text-lg font-bold text-blue-700">Bavishnu M</h3>
-        <p class="text-xs md:text-sm text-gray-600">Team Leader</p>
-      </div>
-
-      <div class="bg-white rounded-2xl shadow-lg p-4 md:p-6 w-[160px] sm:w-64 text-center transform hover:scale-105 transition duration-300">
-        <img src="https://i.postimg.cc/c1Kd9T4D/andy.jpg" alt="Aadhavan GJ" 
-             class="w-20 h-20 md:w-28 md:h-28 mx-auto rounded-full object-cover mb-3 md:mb-4 border-4 border-blue-200">
-        <h3 class="text-sm md:text-lg font-bold text-blue-700">Aadhavan GJ</h3>
-        <p class="text-xs md:text-sm text-gray-600">Documentation & HR</p>
-      </div>
-
-      <div class="bg-white rounded-2xl shadow-lg p-4 md:p-6 w-[160px] sm:w-64 text-center transform hover:scale-105 transition duration-300">
-        <img src="https://i.postimg.cc/mDNfyFbR/Asw-in-K.jpg" alt="Aswin K" 
-             class="w-20 h-20 md:w-28 md:h-28 mx-auto rounded-full object-cover mb-3 md:mb-4 border-4 border-blue-200">
-        <h3 class="text-sm md:text-lg font-bold text-blue-700">Aswin K</h3>
-        <p class="text-xs md:text-sm text-gray-600">Design Thinking</p>
-      </div>
-
-      <div class="bg-white rounded-2xl shadow-lg p-4 md:p-6 w-[160px] sm:w-64 text-center transform hover:scale-105 transition duration-300">
-        <img src="https://i.postimg.cc/x8twWDJ4/Pritesh-Photo.jpg" alt="Pritesh RS" 
-             class="w-20 h-20 md:w-28 md:h-28 mx-auto rounded-full object-cover mb-3 md:mb-4 border-4 border-blue-200">
-        <h3 class="text-sm md:text-lg font-bold text-blue-700">Pritesh RS</h3>
-        <p class="text-xs md:text-sm text-gray-600">Editor & Social Media</p>
-      </div>
-
-      <div class="bg-white rounded-2xl shadow-lg p-4 md:p-6 w-[160px] sm:w-64 text-center transform hover:scale-105 transition duration-300">
-        <img src="https://i.postimg.cc/gjz9SkJh/Dharaneesh-SS.jpg" alt="Dharaneesh S" 
-             class="w-20 h-20 md:w-28 md:h-28 mx-auto rounded-full object-cover mb-3 md:mb-4 border-4 border-blue-200">
-        <h3 class="text-sm md:text-lg font-bold text-blue-700">Dharaneesh S</h3>
-        <p class="text-xs md:text-sm text-gray-600">Editor & Social Media</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-  
   <!-- Mentors Section -->
   <section class="py-16 bg-transparent relative" aria-label="Our Mentors">
     <div class="container mx-auto px-4">
@@ -189,164 +196,190 @@
         <!-- Slider Groups -->
         <div class="slider-group active flex flex-wrap justify-center gap-6" id="group-0">
           <!-- Mentor 1 -->
-          <div class="bg-white p-6 rounded-2xl shadow-xl text-center w-80 mentor-card">
+          <!-- Mentor 1 -->
+          <div class="bg-white p-6 rounded-2xl shadow-xl text-center w-full sm:w-80 mentor-card">
             <img src="https://i.postimg.cc/fLnNSQm1/Mr-Rajesh-Kumar-Adla.png" loading="lazy" class="w-32 h-32 mx-auto rounded-full border-4 border-blue-600 mb-4" alt="Rajesh Kumar Adla - CEO, AIC T-Hub, Hyderabad">
             <h3 class="text-lg font-semibold text-blue-800">Mr. Rajesh Kumar Adla</h3>
             <p class="text-sm text-gray-600">CEO, AIC T-Hub, Hyderabad</p>
           </div>
           <!-- Mentor 2 -->
-          <div class="bg-white p-6 rounded-2xl shadow-xl text-center w-80 mentor-card">
-            <img src="https://i.postimg.cc/y8GBBZd1/Chinnakannan.png" loading="lazy" class="w-32 h-32 mx-auto rounded-full border-4 border-blue-600 mb-4" alt="Chinnakannan - Founder, Aircel, Dishnet">
-            <h3 class="text-lg font-semibold text-blue-800">Mr. Chinnakannan</h3>
-            <p class="text-sm text-gray-600">Founder, Aircel, Dishnet</p>
+          <div class="bg-white p-6 rounded-2xl shadow-xl text-center w-full sm:w-80 mentor-card">
+            <img src="https://i.postimg.cc/DygwV0L0/Arthi.png" loading="lazy" class="w-32 h-32 mx-auto rounded-full border-4 border-blue-600 mb-4" alt="Mrs. Arthi Raguram - Founder, Deyga Organics">
+            <h3 class="text-lg font-semibold text-blue-800">Mrs. Arthi Raguram</h3>
+            <p class="text-sm text-gray-600">Founder, Deyga Organics</p>
           </div>
           <!-- Mentor 3 -->
-          <div class="bg-white p-6 rounded-2xl shadow-xl text-center w-80 mentor-card">
-            <img src="https://i.postimg.cc/s2Zz2gQp/Arokiaswamy.png" loading="lazy" class="w-32 h-32 mx-auto rounded-full border-4 border-blue-600 mb-4" alt="Dr. A. Velumani - Founder, Thyrocare">
-            <h3 class="text-lg font-semibold text-blue-800">Dr. A. Velumani</h3>
-            <p class="text-sm text-gray-600">Founder – Thyrocare</p>
+          <div class="bg-white p-6 rounded-2xl shadow-xl text-center w-full sm:w-80 mentor-card">
+            <img src="https://i.postimg.cc/WbG8VcJp/raja-rajan.jpg" loading="lazy" class="w-32 h-32 mx-auto rounded-full border-4 border-blue-600 mb-4" alt="Dr. A. Velumani - Founder, Thyrocare">
+            <h3 class="text-lg font-semibold text-blue-800">Mr.Raja Rajan</h3>
+            <p class="text-sm text-gray-600">Founder – Happy Ending Icecream</p>
           </div>
+          <!-- ... your mentor cards ... -->
         </div>
 
-        <div class="slider-group active flex flex-wrap justify-center gap-6" id="group-1">
+        <div class="slider-group hidden flex flex-wrap justify-center gap-6" id="group-1">
+          <!-- Mentor 4, 5, 6 -->
+
           <!-- Mentor 4 -->
-          <div class="bg-white p-6 rounded-2xl shadow-xl text-center w-80 mentor-card">
+          <div class="bg-white p-6 rounded-2xl shadow-xl text-center w-full sm:w-80 mentor-card">
             <img src="https://i.postimg.cc/sgxytc3H/Kranthi.png" loading="lazy" class="w-32 h-32 mx-auto rounded-full border-4 border-blue-600 mb-4" alt="Mr. Kranthi Kiran - Marketing, Supply Chain">
             <h3 class="text-lg font-semibold text-blue-800">Mr. Kranthi Kiran</h3>
             <p class="text-sm text-gray-600">Marketing, Supply Chain</p>
           </div>
           <!-- Mentor 5 -->
-          <div class="bg-white p-6 rounded-2xl shadow-xl text-center w-80 mentor-card">
+          <div class="bg-white p-6 rounded-2xl shadow-xl text-center w-full sm:w-80 mentor-card">
             <img src="https://i.postimg.cc/8PtNK3gr/Sahil.png" loading="lazy" class="w-32 h-32 mx-auto rounded-full border-4 border-blue-600 mb-4" alt="Sahil Sameer - Opengrad Foundation">
             <h3 class="text-lg font-semibold text-blue-800">Sahil Sameer</h3>
             <p class="text-sm text-gray-600">Opengrad Foundation</p>
           </div>
           <!-- Mentor 6 -->
-          <div class="bg-white p-6 rounded-2xl shadow-xl text-center w-80 mentor-card">
+          <div class="bg-white p-6 rounded-2xl shadow-xl text-center w-full sm:w-80 mentor-card">
             <img src="https://i.postimg.cc/9FWcB2Kh/Ajay.png" loading="lazy" class="w-32 h-32 mx-auto rounded-full border-4 border-blue-600 mb-4" alt="Ajay Gupta - Aventra Group">
             <h3 class="text-lg font-semibold text-blue-800">Ajay Gupta</h3>
             <p class="text-sm text-gray-600">Aventra Group</p>
           </div>
+
         </div>
 
+        <div class="slider-group hidden flex flex-wrap justify-center gap-6" id="group-2">
+          <!-- Mentor 7, 8, 9 -->
 
-        <div class="slider-group active flex flex-wrap justify-center gap-6" id="group-2">
           <!-- Mentor 7 -->
-          <div class="bg-white p-6 rounded-2xl shadow-xl text-center w-80 mentor-card">
+          <div class="bg-white p-6 rounded-2xl shadow-xl text-center w-full sm:w-80 mentor-card">
             <img src="https://i.postimg.cc/8kd1Wcy4/Balchander.png" loading="lazy" class="w-32 h-32 mx-auto rounded-full border-4 border-blue-600 mb-4" alt="Mr. R. Balchander - MD, Haribhavanam Hotels">
             <h3 class="text-lg font-semibold text-blue-800">Mr. R. Balchander</h3>
             <p class="text-sm text-gray-600">MD, Haribhavanam Hotels</p>
           </div>
           <!-- Mentor 8 -->
-
-          <div class="bg-white p-6 rounded-2xl shadow-xl text-center w-80 mentor-card">
+          <div class="bg-white p-6 rounded-2xl shadow-xl text-center w-full sm:w-80 mentor-card">
             <img src="https://i.postimg.cc/zvk812L6/Shiju.png" loading="lazy" class="w-32 h-32 mx-auto rounded-full border-4 border-blue-600 mb-4" alt="Mr. Shiju Babu - Entre Con Global">
             <h3 class="text-lg font-semibold text-blue-800">Mr. Shiju Babu</h3>
             <p class="text-sm text-gray-600">Entre Con Global</p>
           </div>
           <!-- Mentor 9 -->
-          <div class="bg-white p-6 rounded-2xl shadow-xl text-center w-80 mentor-card">
+          <div class="bg-white p-6 rounded-2xl shadow-xl text-center w-full sm:w-80 mentor-card">
             <img src="https://i.postimg.cc/zvN86YfT/Jegan.png" loading="lazy" class="w-32 h-32 mx-auto rounded-full border-4 border-blue-600 mb-4" alt="Mr. Jegan - CEO, Annapoorna Hotels">
             <h3 class="text-lg font-semibold text-blue-800">Mr. Jegan</h3>
             <p class="text-sm text-gray-600">CEO, Annapoorna Hotels</p>
           </div>
+
         </div>
 
-        <div class="slider-group active flex flex-wrap justify-center gap-6" id="group-3">
-          <!-- Mentor 10 -->
+        <div class="slider-group hidden flex flex-wrap justify-center gap-6" id="group-3">
+          <!-- Mentor 10, 11, 12 -->
 
-          <div class="bg-white p-6 rounded-2xl shadow-xl text-center w-80 mentor-card">
+          <!-- Mentor 10 -->
+          <div class="bg-white p-6 rounded-2xl shadow-xl text-center w-full sm:w-80 mentor-card">
             <img src="https://i.postimg.cc/3Rm3tx3K/Anadakumar.png" loading="lazy" class="w-32 h-32 mx-auto rounded-full border-4 border-blue-600 mb-4" alt="Dr. Anandakumar - Principal, MCE">
             <h3 class="text-lg font-semibold text-blue-800">Dr. Anandakumar</h3>
             <p class="text-sm text-gray-600">Principal, MCE</p>
           </div>
           <!-- Mentor 11 -->
-
-          <div class="bg-white p-6 rounded-2xl shadow-xl text-center w-80 mentor-card">
+          <div class="bg-white p-6 rounded-2xl shadow-xl text-center w-full sm:w-80 mentor-card">
             <img src="https://i.postimg.cc/9fvWP758/Ganapathiram.png" loading="lazy" class="w-32 h-32 mx-auto rounded-full border-4 border-blue-600 mb-4" alt="Dr. N. Ganapathiram - AP, Rathinam CAS">
             <h3 class="text-lg font-semibold text-blue-800">Dr. N. Ganapathiram</h3>
             <p class="text-sm text-gray-600">AP, Rathinam CAS</p>
           </div>
           <!-- Mentor 12 -->
-
-          <div class="bg-white p-6 rounded-2xl shadow-xl text-center w-80 mentor-card">
+          <div class="bg-white p-6 rounded-2xl shadow-xl text-center w-full sm:w-80 mentor-card">
             <img src="https://i.postimg.cc/wBtqskPR/Manjari.png" loading="lazy" class="w-32 h-32 mx-auto rounded-full border-4 border-blue-600 mb-4" alt="Manjari Anandan - Founder, Zhagaram">
             <h3 class="text-lg font-semibold text-blue-800">Manjari Anandan</h3>
             <p class="text-sm text-gray-600">Founder, Zhagaram</p>
           </div>
+
         </div>
 
-        <div class="slider-group active flex flex-wrap justify-center gap-6" id="group-4">
+        <div class="slider-group hidden flex flex-wrap justify-center gap-6" id="group-4">
+          <!-- Mentor 13, 14, 15, 16 -->
+
           <!-- Mentor 13 -->
-          <div class="bg-white p-6 rounded-2xl shadow-xl text-center w-80 mentor-card">
+          <div class="bg-white p-6 rounded-2xl shadow-xl text-center w-full sm:w-80 mentor-card">
             <img src="https://i.postimg.cc/c4ZL5wKP/Prasanna.png" loading="lazy" class="w-32 h-32 mx-auto rounded-full border-4 border-blue-600 mb-4" alt="Prasanna Kumar M - CEO, Nedunal Yaanai">
             <h3 class="text-lg font-semibold text-blue-800">Prasanna Kumar M</h3>
             <p class="text-sm text-gray-600">CEO, Nedunal Yaanai</p>
           </div>
           <!-- Mentor 14 -->
-          <div class="bg-white p-6 rounded-2xl shadow-xl text-center w-80 mentor-card">
+          <div class="bg-white p-6 rounded-2xl shadow-xl text-center w-full sm:w-80 mentor-card">
             <img src="https://i.postimg.cc/t44C9bN5/Dhandapani.png" loading="lazy" class="w-32 h-32 mx-auto rounded-full border-4 border-blue-600 mb-4" alt="Dr. G. Dhandapani - President, KASC">
             <h3 class="text-lg font-semibold text-blue-800">Dr. G. Dhandapani</h3>
             <p class="text-sm text-gray-600">President, KASC</p>
           </div>
           <!-- Mentor 15 -->
-          <div class="bg-white p-6 rounded-2xl shadow-xl text-center w-80 mentor-card">
+          <div class="bg-white p-6 rounded-2xl shadow-xl text-center w-full sm:w-80 mentor-card">
             <img src="https://i.postimg.cc/RZpCFYPz/Balvishnu.png" loading="lazy" class="w-32 h-32 mx-auto rounded-full border-4 border-blue-600 mb-4" alt="Dr. Balvishnu J - AP, Amrita School of Engg.">
             <h3 class="text-lg font-semibold text-blue-800">Dr. Balvishnu J</h3>
             <p class="text-sm text-gray-600">AP, Amrita School of Engg.</p>
           </div>
           <!-- Mentor 16 -->
-          <div class="bg-white p-6 rounded-2xl shadow-xl text-center w-80 mentor-card">
-            <img src="https://i.postimg.cc/DygwV0L0/Arthi.png" loading="lazy" class="w-32 h-32 mx-auto rounded-full border-4 border-blue-600 mb-4" alt="Mrs. Arthi Raguram - Founder, Deyga Organics">
-            <h3 class="text-lg font-semibold text-blue-800">Mrs. Arthi Raguram</h3>
-            <p class="text-sm text-gray-600">Founder, Deyga Organics</p>
-          </div>
-        </div>
-      </div>
 
-      <!-- Additional mentor groups would go here -->
+
+
+        </div>
       </div>
 
       <!-- Navigation Buttons -->
       <div class="flex justify-center gap-4 mt-6">
-        <button onclick="changeGroup(-1)" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition" aria-label="Previous mentors"><--</button>
-        <button onclick="changeGroup(1)" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition" aria-label="Next mentors">--></button>
+        <button onclick="changeGroup(-1)" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition" aria-label="Previous mentors">←</button>
+        <button onclick="changeGroup(1)" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition" aria-label="Next mentors">→</button>
       </div>
 
       <!-- Dot Indicators -->
       <div class="flex justify-center gap-2 mt-4" id="dot-indicators"></div>
-
+    </div>
   </section>
 
 </div>
 
 <div id="footer-placeholder"></div>
 
+<script>
+  const totalGroups = 5;
+  let currentGroup = 0;
+
+  function showGroup(index) {
+    for (let i = 0; i < totalGroups; i++) {
+      document.getElementById(`group-${i}`).classList.remove('active');
+      document.getElementById(`group-${i}`).classList.add('hidden');
+    }
+    document.getElementById(`group-${index}`).classList.add('active');
+    document.getElementById(`group-${index}`).classList.remove('hidden');
+
+    updateDots(index);
+  }
+
+  function changeGroup(direction) {
+    currentGroup += direction;
+    if (currentGroup < 0) currentGroup = totalGroups - 1;
+    if (currentGroup >= totalGroups) currentGroup = 0;
+    showGroup(currentGroup);
+  }
+
+  function updateDots(activeIndex) {
+    const dots = document.querySelectorAll('#dot-indicators .dot');
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === activeIndex);
+    });
+  }
+
+  // Generate dot indicators
+  window.addEventListener('DOMContentLoaded', () => {
+    const dotContainer = document.getElementById('dot-indicators');
+    for (let i = 0; i < totalGroups; i++) {
+      const dot = document.createElement('div');
+      dot.className = 'dot' + (i === 0 ? ' active' : '');
+      dot.onclick = () => {
+        currentGroup = i;
+        showGroup(i);
+      };
+      dotContainer.appendChild(dot);
+    }
+  });
+</script>
+
 <!-- Header loader script -->
 <script src="index.js"></script>
 <script src="header.js"></script>
 
-<script>
-  // Simple slider functionality for mentors
-  let currentGroup = 0;
-  const totalGroups = 5; // Update this based on your actual number of groups
-
-  function changeGroup(direction) {
-    const groups = document.querySelectorAll('.slider-group');
-    groups[currentGroup].classList.remove('active');
-
-    currentGroup += direction;
-
-    if (currentGroup < 0) currentGroup = totalGroups - 1;
-    if (currentGroup >= totalGroups) currentGroup = 0;
-
-    groups[currentGroup].classList.add('active');
-
-  }
-
-  // Initialize dots
-  document.addEventListener('DOMContentLoaded');
-</script>
 
 </body>
 </html>
