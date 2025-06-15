@@ -77,7 +77,32 @@
     });
   </script>
 
+  <!-- Animated Button with Video Icon -->
+  <div class="text-center mt-6">
+    <a href="eventvideos.html"
+       class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-md shadow-lg transition transform hover:scale-105 animate-bounce-slow">
+      <!-- Video Play Icon (SVG) -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-current" viewBox="0 0 24 24" >
+        <path d="M8 5v14l11-7z" />
+      </svg>
+      View Event Videos
+    </a>
+  </div>
 
+  <style>
+    /* Custom slower bounce animation */
+    @keyframes bounce-slow {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-6px);
+      }
+    }
+    .animate-bounce-slow {
+      animation: bounce-slow 2s infinite;
+    }
+  </style>
 
 
 
