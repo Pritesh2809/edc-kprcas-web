@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cicada 3301² – The Puzzle Hunt</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #00ff99;
+      font-family: 'Courier New', Courier, monospace;
+      text-align: center;
+      padding: 2rem;
+      overflow: hidden;
+    }
+
+    #intro {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      animation: fadeOut 2s ease 3s forwards;
+    }
+
+    #intro img {
+      width: 200px;
+      animation: flyAcross 3s ease-in-out forwards;
+    }
+
+    @keyframes flyAcross {
+      0% { transform: translateX(-100vw) rotate(0deg) scale(1); opacity: 0; }
+      40% { opacity: 1; }
+      50% { transform: translateX(0vw) rotate(180deg) scale(1.2); }
+      100% { transform: translateX(100vw) rotate(360deg) scale(0.5); opacity: 0; }
+    }
+
+    @keyframes fadeOut {
+      to { opacity: 0; visibility: hidden; }
+    }
+
+    #content {
+      opacity: 0;
+      animation: fadeIn 1s ease 4s forwards;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    .glitch {
+      font-size: 2.5rem;
+      animation: glitch 1s infinite;
+    }
+
+    @keyframes glitch {
+      0% { text-shadow: 2px 2px red; }
+      20% { text-shadow: -2px 2px cyan; }
+      40% { text-shadow: 2px -2px green; }
+      60% { text-shadow: -2px -2px blue; }
+      80% { text-shadow: 1px 1px yellow; }
+      100% { text-shadow: 0px 0px white; }
+    }
+
+    .btn {
+      background: transparent;
+      border: 2px solid #00ff99;
+      padding: 10px 20px;
+      color: #00ff99;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #00ff99;
+      color: #000;
+    }
+
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Intro animation with cicada fly -->
+<div id="intro">
+  <img src= "3301logo.png" alt="Cicada Logo">
+</div>
+
+<!-- Main Content -->
+<div id="content">
+  <h1 class="glitch">CICADA 3301²</h1>
+  <p>The hunt begins.</p>
+
+  <h3>🧠 A Puzzle Game by EDC KPRCAS</h3>
+  <p>Decode. Discover. Disrupt.</p>
+
+  <p>This is not a regular event. It's a digital mystery game — and only the most curious minds will survive.</p>
+
+  <p>🗓️ <strong>Event Date:</strong> [Insert Date]<br>
+    📍 <strong>Location:</strong> Online + Campus<br>
+    💡 <strong>Theme:</strong> Cryptography, Logic, Curiosity</p>
+
+  <a href="#register"><button class="btn">Register Now</button></a>
+
+  <div id="register">
+    <h2 style="margin-top: 3rem;">🔐 Registration Form</h2>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScaAgsugxKAEOWJ9Qgqs1sNvpebLJacda2kVrXt0jXO64R0Cg/viewform?embedded=true">Loading…</iframe>
+  </div>
+</div>
+
+</body>
+</html>
