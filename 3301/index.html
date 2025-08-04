@@ -60,13 +60,11 @@
 
     @keyframes glitch-anim {
       0% { clip: rect(46px, 9999px, 9px, 0); }
-      /* ... (more steps for a complex glitch) ... */
       100% { clip: rect(23px, 9999px, 92px, 0); }
     }
 
     @keyframes glitch-anim-2 {
       0% { clip: rect(29px, 9999px, 98px, 0); }
-      /* ... (more steps for a complex glitch) ... */
       100% { clip: rect(59px, 9999px, 2px, 0); }
     }
 
@@ -98,8 +96,20 @@
 </head>
 <body class="bg-black">
 
+<!-- Mobile Warning Overlay -->
+<div id="mobile-warning" class="fixed inset-0 bg-black bg-opacity-95 flex-col justify-center items-center z-50 hidden">
+  <div class="text-center p-8 max-w-sm">
+    <h2 class="text-2xl font-bold text-yellow-400">Optimal Experience Notice</h2>
+    <p class="mt-4 text-lg text-gray-300">This puzzle hunt is designed for a desktop experience.</p>
+    <p class="mt-2 text-sm text-gray-500">For full immersion and functionality, please visit on a laptop or desktop computer.</p>
+    <button id="proceed-anyway" class="mt-8 bg-transparent border-2 border-green-400 text-green-400 py-2 px-6 rounded-md hover:bg-green-400 hover:text-black transition-all duration-300">
+      Proceed Anyway
+    </button>
+  </div>
+</div>
+
 <!-- Intro Animation Overlay -->
-<div id="intro" class="fixed inset-0 bg-black flex flex-col justify-center items-center z-50 transition-opacity duration-1000 ease-in-out">
+<div id="intro" class="fixed inset-0 bg-black flex flex-col justify-center items-center z-40 transition-opacity duration-1000 ease-in-out">
   <!-- Inline SVG for Cicada Logo - fast, scalable, and stylable -->
   <svg class="w-24 h-24 text-green-400 mb-6" id="intro-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
     <path d="M12 2c-5.52 0-10 4.48-10 10s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm-1-8h2v4h-2zm0 6h2v2h-2z"/>
@@ -163,41 +173,63 @@
 </div>
 
 <script>
-  // Simple typing effect and intro sequence
+  // Logic for mobile warning and intro sequence
   document.addEventListener('DOMContentLoaded', () => {
     const intro = document.getElementById('intro');
-    const introLogo = document.getElementById('intro-logo');
-    const introText = document.getElementById('intro-text');
     const content = document.getElementById('content');
+    const mobileWarning = document.getElementById('mobile-warning');
+    const proceedButton = document.getElementById('proceed-anyway');
 
-    const textToType = "Searching for intelligent individuals...";
-    let i = 0;
+    // This function contains the original intro animation logic
+    function startIntroSequence() {
+      const introLogo = document.getElementById('intro-logo');
+      const introText = document.getElementById('intro-text');
+      const textToType = "Searching for intelligent individuals...";
+      let i = 0;
 
-    function typeWriter() {
-      if (i < textToType.length) {
-        introText.innerHTML = textToType.substring(0, i + 1) + '<span class="typed-cursor">|</span>';
-        i++;
-        setTimeout(typeWriter, 100);
-      } else {
-        introText.innerHTML = textToType; // Remove cursor at the end
-        // Fade out intro and fade in content
-        setTimeout(() => {
-          intro.style.opacity = '0';
-          intro.addEventListener('transitionend', () => {
-            intro.style.display = 'none';
-          });
-          content.style.opacity = '1';
-        }, 1500);
+      function typeWriter() {
+        if (i < textToType.length) {
+          introText.innerHTML = textToType.substring(0, i + 1) + '<span class="typed-cursor">|</span>';
+          i++;
+          setTimeout(typeWriter, 100);
+        } else {
+          introText.innerHTML = textToType; // Remove cursor at the end
+          // Fade out intro and fade in content
+          setTimeout(() => {
+            intro.style.opacity = '0';
+            intro.addEventListener('transitionend', () => {
+              intro.style.display = 'none';
+            });
+            content.style.opacity = '1';
+          }, 1500);
+        }
       }
+
+      // Make sure intro is visible before starting the animation
+      intro.style.display = 'flex';
+      setTimeout(() => {
+        introLogo.style.transform = 'scale(1.1)';
+        introLogo.style.transition = 'transform 0.5s';
+        introText.style.opacity = '1';
+        setTimeout(typeWriter, 500);
+      }, 500);
     }
 
-    // Start the sequence
-    setTimeout(() => {
-      introLogo.style.transform = 'scale(1.1)';
-      introLogo.style.transition = 'transform 0.5s';
-      introText.style.opacity = '1';
-      setTimeout(typeWriter, 500);
-    }, 500);
+    // Check screen width to determine if it's a mobile device
+    if (window.innerWidth < 768) {
+      mobileWarning.classList.remove('hidden');
+      mobileWarning.classList.add('flex'); // Use flex to display it
+      intro.style.display = 'none'; // Hide the intro initially on mobile
+    } else {
+      // If not mobile, start the intro sequence right away
+      startIntroSequence();
+    }
+
+    // Add event listener for the "Proceed Anyway" button
+    proceedButton.addEventListener('click', () => {
+      mobileWarning.style.display = 'none';
+      startIntroSequence(); // Start the intro after user agrees
+    });
   });
 </script>
 
