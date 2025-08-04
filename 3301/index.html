@@ -4,120 +4,202 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Cicada 3301² – The Puzzle Hunt</title>
+
+  <!-- Tailwind CSS for modern styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts for a better monospace/hacker font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
+    /* Custom CSS for animations and theme */
     body {
+      font-family: 'Fira Code', 'Courier New', Courier, monospace;
       background-color: #000;
-      color: #00ff99;
-      font-family: 'Courier New', Courier, monospace;
-      text-align: center;
-      padding: 2rem;
-      overflow: hidden;
+      color: #00ff99; /* Neon Green */
+      overflow-x: hidden; /* Prevent horizontal scroll */
+      text-shadow: 0 0 2px #00ff99;
     }
 
-    #intro {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: black;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      animation: fadeOut 2s ease 3s forwards;
-    }
-
-    #intro img {
-      width: 200px;
-      animation: flyAcross 3s ease-in-out forwards;
-    }
-
-    @keyframes flyAcross {
-      0% { transform: translateX(-100vw) rotate(0deg) scale(1); opacity: 0; }
-      40% { opacity: 1; }
-      50% { transform: translateX(0vw) rotate(180deg) scale(1.2); }
-      100% { transform: translateX(100vw) rotate(360deg) scale(0.5); opacity: 0; }
-    }
-
-    @keyframes fadeOut {
-      to { opacity: 0; visibility: hidden; }
-    }
-
-    #content {
-      opacity: 0;
-      animation: fadeIn 1s ease 4s forwards;
-    }
-
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
-
+    /* Glitch animation for the main title */
     .glitch {
-      font-size: 2.5rem;
-      animation: glitch 1s infinite;
+      animation: glitch 1.5s linear infinite;
     }
 
     @keyframes glitch {
-      0% { text-shadow: 2px 2px red; }
-      20% { text-shadow: -2px 2px cyan; }
-      40% { text-shadow: 2px -2px green; }
-      60% { text-shadow: -2px -2px blue; }
-      80% { text-shadow: 1px 1px yellow; }
-      100% { text-shadow: 0px 0px white; }
+      2%, 64% { transform: translate(2px, 0) skew(0deg); }
+      4%, 60% { transform: translate(-2px, 0) skew(0deg); }
+      62% { transform: translate(0, 0) skew(5deg); }
     }
 
-    .btn {
-      background: transparent;
-      border: 2px solid #00ff99;
-      padding: 10px 20px;
-      color: #00ff99;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .btn:hover {
-      background: #00ff99;
-      color: #000;
-    }
-
-    iframe {
+    .glitch::before,
+    .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-      height: 600px;
-      border: none;
-      margin-top: 2rem;
+      height: 100%;
     }
+
+    .glitch::before {
+      left: 2px;
+      text-shadow: -2px 0 #ff00c1; /* Magenta */
+      clip: rect(44px, 450px, 56px, 0);
+      animation: glitch-anim 5s infinite linear alternate-reverse;
+    }
+
+    .glitch::after {
+      left: -2px;
+      text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1; /* Cyan, Magenta */
+      clip: rect(86px, 450px, 90px, 0);
+      animation: glitch-anim-2 3s infinite linear alternate-reverse;
+    }
+
+    @keyframes glitch-anim {
+      0% { clip: rect(46px, 9999px, 9px, 0); }
+      /* ... (more steps for a complex glitch) ... */
+      100% { clip: rect(23px, 9999px, 92px, 0); }
+    }
+
+    @keyframes glitch-anim-2 {
+      0% { clip: rect(29px, 9999px, 98px, 0); }
+      /* ... (more steps for a complex glitch) ... */
+      100% { clip: rect(59px, 9999px, 2px, 0); }
+    }
+
+    /* Typing effect cursor */
+    .typed-cursor {
+      color: #00ff99;
+      animation: blink 0.7s infinite;
+    }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    /* Custom scrollbar for aesthetics */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #000;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #00ff99;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #fff;
+    }
+
   </style>
 </head>
-<body>
+<body class="bg-black">
 
-<!-- Intro animation with cicada fly -->
-<div id="intro">
-  <img src= "3301logo.png" alt="Cicada Logo">
+<!-- Intro Animation Overlay -->
+<div id="intro" class="fixed inset-0 bg-black flex flex-col justify-center items-center z-50 transition-opacity duration-1000 ease-in-out">
+  <!-- Inline SVG for Cicada Logo - fast, scalable, and stylable -->
+  <svg class="w-24 h-24 text-green-400 mb-6" id="intro-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 2c-5.52 0-10 4.48-10 10s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm-1-8h2v4h-2zm0 6h2v2h-2z"/>
+    <path d="M15.67 4.33C14.45 3.52 13.07 3 11.5 3c-1.57 0-2.95.52-4.17 1.33L6.25 2.5C7.88 1.56 9.77 1 11.5 1s3.62.56 5.25 1.5l-1.08 1.83zM8.33 19.67C9.55 20.48 10.93 21 12.5 21c1.57 0 2.95-.52 4.17-1.33l1.08 1.83C16.12 22.44 14.23 23 12.5 23s-3.62-.56-5.25-1.5l1.08-1.83z"/>
+  </svg>
+  <p id="intro-text" class="text-lg text-green-400 opacity-0 transition-opacity duration-1000"></p>
 </div>
 
 <!-- Main Content -->
-<div id="content">
-  <h1 class="glitch">CICADA 3301²</h1>
-  <p>The hunt begins.</p>
+<div id="content" class="container mx-auto p-4 md:p-8 text-center opacity-0 transition-opacity duration-1000">
 
-  <h3>🧠 A Puzzle Game by EDC KPRCAS</h3>
-  <p>Decode. Discover. Disrupt.</p>
+  <header class="py-12">
+    <h1 class="glitch text-5xl md:text-7xl font-bold relative inline-block" data-text="CICADA 3301²">CICADA 3301²</h1>
+    <p class="mt-4 text-lg md:text-xl">The hunt has begun.</p>
+  </header>
 
-  <p>This is not a regular event. It's a digital mystery game — and only the most curious minds will survive.</p>
+  <main>
+    <section id="about" class="max-w-4xl mx-auto my-12">
+      <h2 class="text-3xl font-bold text-green-400 border-b-2 border-green-700 inline-block pb-2">A Puzzle by EDC KPRCAS</h2>
+      <p class="mt-6 text-base md:text-lg leading-relaxed">
+        This is not a game. This is a test. We are looking for the highly intelligent. To find them, we have devised a series of challenges that will span the digital and physical worlds. Decode. Discover. Disrupt. Only the most curious minds will find their way to the end.
+      </p>
+    </section>
 
-  <p>🗓️ <strong>Event Date:</strong> [Insert Date]<br>
-    📍 <strong>Location:</strong> Online + Campus<br>
-    💡 <strong>Theme:</strong> Cryptography, Logic, Curiosity</p>
+    <section id="details" class="my-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div class="bg-gray-900/50 border border-green-800 p-6 rounded-lg">
+          <h3 class="text-2xl font-bold text-green-400">Date</h3>
+          <p class="mt-2 text-lg">August 23, 2025</p>
+        </div>
+        <div class="bg-gray-900/50 border border-green-800 p-6 rounded-lg">
+          <h3 class="text-2xl font-bold text-green-400">Location</h3>
+          <p class="mt-2 text-lg">Online + Campus</p>
+        </div>
+        <div class="bg-gray-900/50 border border-green-800 p-6 rounded-lg">
+          <h3 class="text-2xl font-bold text-green-400">Themes</h3>
+          <p class="mt-2 text-lg">Cryptography, Logic, Steganography</p>
+        </div>
+      </div>
+    </section>
 
-  <a href="#register"><button class="btn">Register Now</button></a>
+    <section id="register" class="my-12">
+      <a href="#register-form" class="inline-block bg-transparent border-2 border-green-400 text-green-400 text-xl font-bold py-3 px-8 rounded-md hover:bg-green-400 hover:text-black transition-all duration-300 shadow-[0_0_15px_rgba(0,255,153,0.6)] hover:shadow-[0_0_25px_rgba(0,255,153,0.9)]">
+        Register Now
+      </a>
 
-  <div id="register">
-    <h2 style="margin-top: 3rem;">🔐 Registration Form</h2>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScaAgsugxKAEOWJ9Qgqs1sNvpebLJacda2kVrXt0jXO64R0Cg/viewform?embedded=true">Loading…</iframe>
-  </div>
+      <div id="register-form" class="mt-16 max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold mb-6">🔐 Registration</h2>
+        <div class="border-2 border-green-800 rounded-lg overflow-hidden">
+          <iframe class="w-full h-[600px]" src="https://docs.google.com/forms/d/e/1FAIpQLScaAgsugxKAEOWJ9Qgqs1sNvpebLJacda2kVrXt0jXO64R0Cg/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="mt-20 py-6 border-t border-green-900 text-gray-500">
+    <p>&copy; 2025 EDC KPRCAS. All rights reserved.</p>
+    <p class="mt-2 text-sm">We are watching.</p>
+  </footer>
+
 </div>
+
+<script>
+  // Simple typing effect and intro sequence
+  document.addEventListener('DOMContentLoaded', () => {
+    const intro = document.getElementById('intro');
+    const introLogo = document.getElementById('intro-logo');
+    const introText = document.getElementById('intro-text');
+    const content = document.getElementById('content');
+
+    const textToType = "Searching for intelligent individuals...";
+    let i = 0;
+
+    function typeWriter() {
+      if (i < textToType.length) {
+        introText.innerHTML = textToType.substring(0, i + 1) + '<span class="typed-cursor">|</span>';
+        i++;
+        setTimeout(typeWriter, 100);
+      } else {
+        introText.innerHTML = textToType; // Remove cursor at the end
+        // Fade out intro and fade in content
+        setTimeout(() => {
+          intro.style.opacity = '0';
+          intro.addEventListener('transitionend', () => {
+            intro.style.display = 'none';
+          });
+          content.style.opacity = '1';
+        }, 1500);
+      }
+    }
+
+    // Start the sequence
+    setTimeout(() => {
+      introLogo.style.transform = 'scale(1.1)';
+      introLogo.style.transition = 'transform 0.5s';
+      introText.style.opacity = '1';
+      setTimeout(typeWriter, 500);
+    }, 500);
+  });
+</script>
 
 </body>
 </html>
