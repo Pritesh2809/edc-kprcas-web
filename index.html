@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EDC - KPRCAS</title>
   <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/7ZyfG5ty/edclogo.png">
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/header.css">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
@@ -57,12 +59,8 @@
 
 <body>
 
-
-
 <!-- overlay container -->
 <div class="overlay">
-
-
 
   <!-- Header will load here -->
   <div id="header-placeholder"></div>
@@ -195,7 +193,7 @@ Thanks to this initiative, more than seven student-run ventures have already bee
   </div>
 
   <!-- Upcoming Events Section -->
-    <section class="py-12 " id="upcoming-events">
+  <section class="py-12 " id="upcoming-events">
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-3xl md:text-4xl font-bold text-blue-800 text-center mb-10">
         🚀 Upcoming Events
@@ -223,10 +221,10 @@ Thanks to this initiative, more than seven student-run ventures have already bee
                class="w-full h-56 object-cover rounded-md mb-4">
           <h3 class="text-xl font-semibold text-blue-700">Cicada 3301²</h3>
           <p class="text-gray-600 text-sm mt-2">
-<!--            Step into the world of mystery and intellect.-->
-<!--            Cicada 3301² is a cryptographic puzzle-based challenge designed to push the limits-->
-<!--            of logic, problem-solving, and teamwork.-->
-<!--            <br><br>-->
+            <!--            Step into the world of mystery and intellect.-->
+            <!--            Cicada 3301² is a cryptographic puzzle-based challenge designed to push the limits-->
+            <!--            of logic, problem-solving, and teamwork.-->
+            <!--            <br><br>-->
             This is not just a test of knowledge — it’s a test of perseverance, creativity, and
             the ability to think beyond the obvious.
             <br><span class="font-bold">📅 21 Aug 2025</span> | <span class="text-blue-600">KPRCAS</span>
@@ -289,59 +287,23 @@ Thanks to this initiative, more than seven student-run ventures have already bee
     </div>
   </section>
 
-
   <!-- Our Team Section -->
-  <section class="py-8 md:py-6 ">
+  <section class="py-12 md:py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center">
-        <h2 class="text-2xl md:text-4xl font-extrabold text-blue-800 mb-8 md:mb-14 tracking-tight">
-          Meet Our Team <span class="text-blue-600">(2024–2025)</span>
-        </h2>
+      <div class="text-center mb-10">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-blue-800 tracking-tight">Meet Our Team</h2>
+        <div class="mt-4">
+          <label for="year-select" class="sr-only">Select Team Year</label>
+          <select id="year-select" class="px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
+            <option value="2024">2024–2025</option>
+            <option value="2025" selected>2025–2026</option>
+          </select>
+        </div>
       </div>
 
-      <div class="flex flex-wrap justify-center gap-4 md:gap-8 px-2">
-        <!-- Team Member Card -->
-        <div class="bg-white rounded-2xl shadow-lg p-4 md:p-6 w-[160px] sm:w-64 text-center transform hover:scale-105 transition duration-300">
-          <img src="https://i.postimg.cc/w3Kf09Td/baavi-anna.jpg" alt="Bavishnu M"
-               class="w-20 h-20 md:w-28 md:h-28 mx-auto rounded-full object-cover mb-3 md:mb-4 border-4 border-blue-200">
-          <h3 class="text-sm md:text-lg font-bold text-blue-700">Bavishnu M</h3>
-          <p class="text-xs md:text-sm text-gray-600">Team Leader</p>
-        </div>
-
-        <div class="bg-white rounded-2xl shadow-lg p-4 md:p-6 w-[160px] sm:w-64 text-center transform hover:scale-105 transition duration-300">
-          <img src="https://i.postimg.cc/c1Kd9T4D/andy.jpg" alt="Aadhavan GJ"
-               class="w-20 h-20 md:w-28 md:h-28 mx-auto rounded-full object-cover mb-3 md:mb-4 border-4 border-blue-200">
-          <h3 class="text-sm md:text-lg font-bold text-blue-700">Aadhavan GJ</h3>
-          <p class="text-xs md:text-sm text-gray-600">Documentation & HR</p>
-        </div>
-
-        <div class="bg-white rounded-2xl shadow-lg p-4 md:p-6 w-[160px] sm:w-64 text-center transform hover:scale-105 transition duration-300">
-          <img src="https://i.postimg.cc/nhmCDT2r/bharani-akka.jpg" alt="Barani Sri S"
-               class="w-20 h-20 md:w-28 md:h-28 mx-auto rounded-full object-cover mb-3 md:mb-4 border-4 border-blue-200">
-          <h3 class="text-sm md:text-lg font-bold text-blue-700">Barani Sri S</h3>
-          <p class="text-xs md:text-sm text-gray-600">Content Creater</p>
-        </div>
-
-        <div class="bg-white rounded-2xl shadow-lg p-4 md:p-6 w-[160px] sm:w-64 text-center transform hover:scale-105 transition duration-300">
-          <img src="https://i.postimg.cc/mDNfyFbR/Asw-in-K.jpg" alt="Aswin K"
-               class="w-20 h-20 md:w-28 md:h-28 mx-auto rounded-full object-cover mb-3 md:mb-4 border-4 border-blue-200">
-          <h3 class="text-sm md:text-lg font-bold text-blue-700">Aswin K</h3>
-          <p class="text-xs md:text-sm text-gray-600">Design Thinking</p>
-        </div>
-
-        <div class="bg-white rounded-2xl shadow-lg p-4 md:p-6 w-[160px] sm:w-64 text-center transform hover:scale-105 transition duration-300">
-          <img src="https://i.postimg.cc/x8twWDJ4/Pritesh-Photo.jpg" alt="Pritesh RS"
-               class="w-20 h-20 md:w-28 md:h-28 mx-auto rounded-full object-cover mb-3 md:mb-4 border-4 border-blue-200">
-          <h3 class="text-sm md:text-lg font-bold text-blue-700">Pritesh RS</h3>
-          <p class="text-xs md:text-sm text-gray-600">Editor</p>
-        </div>
-
-        <div class="bg-white rounded-2xl shadow-lg p-4 md:p-6 w-[160px] sm:w-64 text-center transform hover:scale-105 transition duration-300">
-          <img src="https://i.postimg.cc/gjz9SkJh/Dharaneesh-SS.jpg" alt="Dharaneesh S"
-               class="w-20 h-20 md:w-28 md:h-28 mx-auto rounded-full object-cover mb-3 md:mb-4 border-4 border-blue-200">
-          <h3 class="text-sm md:text-lg font-bold text-blue-700">Dharaneesh S</h3>
-          <p class="text-xs md:text-sm text-gray-600">Social Media</p>
-        </div>
+      <!-- Team Container -->
+      <div id="team-container">
+        <!-- Team members will be dynamically inserted here -->
       </div>
     </div>
   </section>
