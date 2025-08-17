@@ -10,59 +10,59 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
   <!-- Bootstrap CSS (CDN) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<style>
+  <style>
 
-  /* Base styling for mentor cards */
-  .mentor-card {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 1rem;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    text-align: center;
-  }
-
-  /* MOBILE VIEW: Horizontal scroll */
-  @media (max-width: 639px) {
-    .slider-group {
-      display: flex !important;
-      -webkit-overflow-scrolling: touch;
-      gap: 1rem;
-      padding-bottom: 1rem;
-    }
-  }
-  /* DESKTOP VIEW: Normal 3-card rows */
-  @media (min-width: 640px) {
-    .slider-group {
-      display: flex !important;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.5rem;
-    }
-
+    /* Base styling for mentor cards */
     .mentor-card {
-      width: 320px;
-      max-width: 100%;
-      flex: 0 0 auto;
+      background: white;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      text-align: center;
     }
-  }
 
-  /* Utility for showing/hiding groups */
-  .slider-group.hidden {
-    display: none !important;
-  }
+    /* MOBILE VIEW: Horizontal scroll */
+    @media (max-width: 639px) {
+      .slider-group {
+        display: flex !important;
+        -webkit-overflow-scrolling: touch;
+        gap: 1rem;
+        padding-bottom: 1rem;
+      }
+    }
+    /* DESKTOP VIEW: Normal 3-card rows */
+    @media (min-width: 640px) {
+      .slider-group {
+        display: flex !important;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+      }
+
+      .mentor-card {
+        width: 320px;
+        max-width: 100%;
+        flex: 0 0 auto;
+      }
+    }
+
+    /* Utility for showing/hiding groups */
+    .slider-group.hidden {
+      display: none !important;
+    }
 
 
-</style>
+  </style>
 </head>
 
 <body>
 
 
-  
+
 <!-- overlay container -->
 <div class="overlay">
 
-  
+
 
   <!-- Header will load here -->
   <div id="header-placeholder"></div>
@@ -99,7 +99,7 @@
     </div>
   </section>
 
- <!-- Modal -->
+  <!-- Modal -->
   <div class="modal fade" id="anthemModal" tabindex="-1" aria-labelledby="anthemModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content text-center">
@@ -117,14 +117,14 @@
       </div>
     </div>
   </div>
-  
+
   <script>
     window.onload = function() {
       var myModal = new bootstrap.Modal(document.getElementById('anthemModal'));
       myModal.show();
     }
   </script>
-<!-- Bootstrap JS and dependencies (CDN) -->
+  <!-- Bootstrap JS and dependencies (CDN) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
   <!-- Achievements Section -->
@@ -193,6 +193,54 @@ Thanks to this initiative, more than seven student-run ventures have already bee
       <p id="modalDetail" class="text-gray-700"></p>
     </div>
   </div>
+
+  <!-- Upcoming Events Section -->
+    <section class="py-12 " id="upcoming-events">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-blue-800 text-center mb-10">
+        🚀 Upcoming Events
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <!-- Event Card 2: Food Startup Training -->
+        <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 p-6">
+          <img src="https://i.postimg.cc/X7xDcsb6/Whats-App-Image-2025-08-17-at-05-21-09-2949f15e.jpg" alt="Food Business Training"
+               class="w-full h-56 object-cover rounded-md mb-4">
+          <h3 class="text-xl font-semibold text-blue-700">Spice Up Your Startup: Hands-on Food Business Training</h3>
+          <p class="text-gray-600 text-sm mt-2">
+            A one-month intensive skill development programme on entrepreneurship,
+            focused on food business training with industry mentorship.
+            <br><span class="font-bold">📅 18 Aug – 17 Sept 2025</span> |
+            <span class="text-blue-600">RWTP, Annur</span>
+          </p>
+          <a href="events.html" class="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded-full text-sm hover:bg-blue-700 transition">Know More</a>
+        </div>
+
+        <!-- Event Card 1: Cicada -->
+        <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 p-6">
+          <img src="https://www.truesec.com/wp-content/uploads/2024/08/cicada3301-ransomware.png" alt="Cicada Event"
+               class="w-full h-56 object-cover rounded-md mb-4">
+          <h3 class="text-xl font-semibold text-blue-700">Cicada 3301²</h3>
+          <p class="text-gray-600 text-sm mt-2">
+<!--            Step into the world of mystery and intellect.-->
+<!--            Cicada 3301² is a cryptographic puzzle-based challenge designed to push the limits-->
+<!--            of logic, problem-solving, and teamwork.-->
+<!--            <br><br>-->
+            This is not just a test of knowledge — it’s a test of perseverance, creativity, and
+            the ability to think beyond the obvious.
+            <br><span class="font-bold">📅 21 Aug 2025</span> | <span class="text-blue-600">KPRCAS</span>
+          </p>
+          <a href="https://edckprcas.co.in/3301" class="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded-full text-sm hover:bg-blue-700 transition">Know More</a>
+        </div>
+
+
+
+
+      </div>
+    </div>
+  </section>
+
 
   <script>
     // Grab modal elements
@@ -387,11 +435,11 @@ Thanks to this initiative, more than seven student-run ventures have already bee
             <p class="text-sm text-gray-600">Principal, MCE</p>
           </div>
           <!-- Mentor 11 -->
-<!--          <div class="bg-white p-6 rounded-2xl shadow-xl text-center w-full sm:w-80 mentor-card">-->
-<!--            <img src="https://i.postimg.cc/9fvWP758/Ganapathiram.png" loading="lazy" class="w-32 h-32 mx-auto rounded-full border-4 border-blue-600 mb-4" alt="Dr. N. Ganapathiram - AP, Rathinam CAS">-->
-<!--            <h3 class="text-lg font-semibold text-blue-800">Dr. N. Ganapathiram</h3>-->
-<!--            <p class="text-sm text-gray-600">AP, Rathinam CAS</p>-->
-<!--          </div>-->
+          <!--          <div class="bg-white p-6 rounded-2xl shadow-xl text-center w-full sm:w-80 mentor-card">-->
+          <!--            <img src="https://i.postimg.cc/9fvWP758/Ganapathiram.png" loading="lazy" class="w-32 h-32 mx-auto rounded-full border-4 border-blue-600 mb-4" alt="Dr. N. Ganapathiram - AP, Rathinam CAS">-->
+          <!--            <h3 class="text-lg font-semibold text-blue-800">Dr. N. Ganapathiram</h3>-->
+          <!--            <p class="text-sm text-gray-600">AP, Rathinam CAS</p>-->
+          <!--          </div>-->
           <!-- Mentor 12 -->
           <div class="bg-white p-6 rounded-2xl shadow-xl text-center w-full sm:w-80 mentor-card">
             <img src="https://i.postimg.cc/wBtqskPR/Manjari.png" loading="lazy" class="w-32 h-32 mx-auto rounded-full border-4 border-blue-600 mb-4" alt="Manjari Anandan - Founder, Zhagaram">
