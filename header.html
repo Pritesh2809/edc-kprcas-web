@@ -1,33 +1,82 @@
+<style>
+  /* Header background gradient + glassmorphism */
+  header {
+    /*background: linear-gradient(90deg, rgba(255,255,255,0.8), rgba(240,249,255,0.9));*/
+    backdrop-filter: blur(12px);
+    background-size: 200% 200%;
+    animation: gradientMove 8s ease infinite;
+    transition: all 0.3s ease-in-out;
+  }
+  @keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
 
-  <style>
-    #mobile-menu {
-      display: none;
-    }
-    #mobile-menu.show {
-      display: block;
-    }
-  </style>
+  /* Mobile menu animation (slide-in) */
+  #mobile-menu {
+    display: none;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.3s ease;
+  }
+  #mobile-menu.show {
+    display: block;
+    transform: translateX(0);
+    opacity: 1;
+  }
 
+  /* Shrink header on scroll */
+  header.shrink .flex {
+    height: 56px !important;
+  }
 
-<header class="bg-white/90 backdrop-blur-sm shadow-md sticky top-0 z-50 border-b border-gray-100">
+  /* Hover underline + glow effect */
+  nav a {
+    position: relative;
+    overflow: hidden;
+  }
+  nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(to right, #2563eb, #3b82f6);
+    transition: width 0.3s ease-in-out;
+  }
+  nav a:hover::after {
+    width: 100%;
+  }
+  nav a:hover {
+    color: #2563eb;
+    text-shadow: 0 0 6px rgba(37,99,235,0.4);
+  }
+</style>
+
+<header class="shadow-md sticky top-0 z-50 border-b border-gray-100">
   <div class="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6">
-    <div class="flex justify-between items-center h-16 relative">
+    <div class="flex justify-between items-center h-16 relative transition-all duration-300">
 
       <!-- Logo -->
-      <a href="index.html" class="flex items-center space-x-2">
-        <img src="https://i.postimg.cc/ZqV4vd7y/EDC-2-1.png" alt="EDC Logo" class="h-8 sm:h-10 w-auto flex-shrink-0" />
-        <span class="text-sm sm:text-lg font-bold text-blue-800 truncate">EDC - KPRCAS</span>
+      <a href="index.html" class="flex items-center space-x-2 group">
+        <img src="https://i.postimg.cc/ZqV4vd7y/EDC-2-1.png" alt="EDC Logo"
+             class="h-8 sm:h-10 w-auto flex-shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:drop-shadow-md" />
+        <span class="text-sm sm:text-lg font-bold bg-gradient-to-r from-blue-700 to-blue-500 bg-clip-text text-transparent truncate">
+          EDC - KPRCAS
+        </span>
       </a>
 
       <!-- Desktop Nav -->
       <nav class="hidden md:flex space-x-4 lg:space-x-6 text-sm font-semibold text-gray-700" aria-label="Main navigation">
-        <a href="index.html" class="hover:text-blue-600 px-2 py-1 rounded transition">Home</a>
-        <a href="about.html" class="hover:text-blue-600 px-2 py-1 rounded transition">About</a>
-        <a href="head.html" class="hover:text-blue-600 px-2 py-1 rounded transition">Head of Cell</a>
-        <a href="events.html" class="hover:text-blue-600 px-2 py-1 rounded transition">Events</a>
-        <a href="achievements.html" class="hover:text-blue-600 px-2 py-1 rounded transition">Achievements</a>
-        <a href="gallery.html" class="hover:text-blue-600 px-2 py-1 rounded transition">Gallery</a>
-        <a href="contact.html" class="hover:text-blue-600 px-2 py-1 rounded transition">Contact</a>
+        <a href="index.html" class="px-2 py-1 transition">Home</a>
+        <a href="about.html" class="px-2 py-1 transition">About</a>
+        <a href="head.html" class="px-2 py-1 transition">Head of Cell</a>
+        <a href="events.html" class="px-2 py-1 transition">Events</a>
+        <a href="achievements.html" class="px-2 py-1 transition">Achievements</a>
+        <a href="gallery.html" class="px-2 py-1 transition">Gallery</a>
+        <a href="contact.html" class="px-2 py-1 transition">Contact</a>
       </nav>
 
       <!-- Mobile Nav Toggle -->
@@ -39,15 +88,15 @@
         </button>
 
         <!-- Mobile Menu -->
-        <nav id="mobile-menu" class="absolute right-0 mt-2 w-56 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 z-50">
-          <div class="py-1">
-            <a href="index.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50">Home</a>
-            <a href="about.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50">About</a>
-            <a href="head.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50">Head of Cell</a>
-            <a href="events.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50">Events</a>
-            <a href="achievements.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50">Achievements</a>
-            <a href="gallery.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50">Gallery</a>
-            <a href="contact.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50">Contact</a>
+        <nav id="mobile-menu" class="absolute top-14 right-0 w-56 bg-white rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 z-50">
+          <div class="py-2">
+            <a href="index.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 rounded">Home</a>
+            <a href="about.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 rounded">About</a>
+            <a href="head.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 rounded">Head of Cell</a>
+            <a href="events.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 rounded">Events</a>
+            <a href="achievements.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 rounded">Achievements</a>
+            <a href="gallery.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 rounded">Gallery</a>
+            <a href="contact.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 rounded">Contact</a>
           </div>
         </nav>
       </div>
@@ -57,7 +106,18 @@
 </header>
 
 <script>
+  // Mobile menu toggle
   document.getElementById('menu-btn').addEventListener('click', function () {
     document.getElementById('mobile-menu').classList.toggle('show');
+  });
+
+  // Shrinking header on scroll
+  window.addEventListener("scroll", function() {
+    const header = document.querySelector("header");
+    if (window.scrollY > 60) {
+      header.classList.add("shrink");
+    } else {
+      header.classList.remove("shrink");
+    }
   });
 </script>
