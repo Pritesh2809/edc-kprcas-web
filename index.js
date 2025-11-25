@@ -50,11 +50,12 @@ document.addEventListener('DOMContentLoaded', () => {
     '2025': [
 {name: 'Bavishnu M', role: 'Convenor', img: 'https://i.postimg.cc/w3Kf09Td/baavi-anna.jpg'},
 {name: 'Pritesh R S', role: 'Team Leader', img: 'https://i.postimg.cc/x8twWDJ4/Pritesh-Photo.jpg'},
+{name: 'Dharaneesh S', role: 'Social Media', img: 'https://i.postimg.cc/gjz9SkJh/Dharaneesh-SS.jpg'}
 {name: 'Anusha', role: 'Event Coordinator', img: 'https://i.postimg.cc/htTy84j8/anusha-balraj.jpg'},
 {name: 'Tarshan P', role: 'Design & Innovation', img: 'https://i.postimg.cc/1tr1vc3H/20250129_095328.jpg'},
 {name: 'Akshaya', role: 'Content Creator', img: 'https://i.postimg.cc/SKLP4QbQ/IMG-9350.jpg'},
-{name: 'Mithilesh', role: 'Marketing & Outreach', img: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiQmcqzN9KSMx-hxPJfiB3yt59uQhN9R4IqjisfUEitJv9lbQVN14QYLsUfmgiH-AoH2VgTFMdRBaTWa9XXpU9aMV1fveYnRgRsf4peaqt_rCR_qyQ483NgjHHdhfYpOr8axyGWhk3DHw5lAUQkXl6NGMugPS7k6Apw7CUjqRMgwAv01i2_AXyRumuBfw/s458/blank-profile-picture-hd-images-photo.JPG'},
-{name: 'James', role: 'Technical Support', img: 'https://i.postimg.cc/RVXVS99R/IMG-2923.avif'},
+{name: 'Mithilesh', role: 'Marketing & Outreach', img: 'https://i.postimg.cc/RVXVS99R/IMG-2923.avif'},
+{name: 'James', role: 'Technical Support', img: 'https://i.postimg.cc/RVXVS99R/IMG-293.avif'},
 {name: 'Rakshan P', role: 'Social Media & PR', img: 'https://i.postimg.cc/7YRqDFHm/EDC25-Member-Rakshan-purushothaman.jpg'}
     ]
 };
