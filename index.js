@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
     '2025': [
 {name: 'Bavishnu M', role: 'Convenor', img: 'https://i.postimg.cc/w3Kf09Td/baavi-anna.jpg'},
 {name: 'Pritesh R S', role: 'Team Leader', img: 'https://i.postimg.cc/x8twWDJ4/Pritesh-Photo.jpg'},
-{name: 'Dharaneesh S', role: 'Social Media', img: 'https://i.postimg.cc/gjz9SkJh/Dharaneesh-SS.jpg'}
+{name: 'Dharaneesh S', role: 'Social Media', img: 'https://i.postimg.cc/gjz9SkJh/Dharaneesh-SS.jpg'},
 {name: 'Anusha', role: 'Event Coordinator', img: 'https://i.postimg.cc/htTy84j8/anusha-balraj.jpg'},
 {name: 'Tarshan P', role: 'Design & Innovation', img: 'https://i.postimg.cc/1tr1vc3H/20250129_095328.jpg'},
 {name: 'Akshaya', role: 'Content Creator', img: 'https://i.postimg.cc/SKLP4QbQ/IMG-9350.jpg'},
