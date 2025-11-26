@@ -48,8 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
 {name: 'Dharaneesh S', role: 'Social Media', img: 'https://i.postimg.cc/gjz9SkJh/Dharaneesh-SS.jpg'}
     ],
     '2025': [
-{name: 'Bavishnu M', role: 'Convenor', img: 'https://i.postimg.cc/w3Kf09Td/baavi-anna.jpg'},
 {name: 'Pritesh R S', role: 'Team Leader', img: 'https://i.postimg.cc/x8twWDJ4/Pritesh-Photo.jpg'},
+{name: 'Bavishnu M', role: 'Convenor', img: 'https://i.postimg.cc/w3Kf09Td/baavi-anna.jpg'},
 {name: 'Dharaneesh S', role: 'Social Media & Designing', img: 'https://i.postimg.cc/gjz9SkJh/Dharaneesh-SS.jpg'},
 {name: 'Mithilesh', role: 'Marketing & Outreach', img: 'https://i.postimg.cc/RVXVS99R/IMG-2923.avif'},
 {name: 'James', role: 'Technical Support', img: 'https://i.postimg.cc/sgG2wGLg/James.jpg'}
